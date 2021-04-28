@@ -1,11 +1,29 @@
 import React from "react"
-import './App.css';
+import "./main.scss"
+
+import {Welcome} from "./Welcome";
+import {Packeges} from "./Packeges";
+import {ChooseYourPackege} from "./ChooseYourPackege";
+import {SendingOffer} from "./SendingOffer";
 
 function App() {
+
+
   return (
-    <div className="App">
-        HELLO
-    </div>
+    <main className={"main"}>
+        <section>
+            <Welcome/>
+        </section>
+        <section>
+            <Packeges />
+        </section>
+        <section>
+            <ChooseYourPackege />
+        </section>
+        <section>
+            <SendingOffer />
+        </section>
+    </main>
   );
 }
 
