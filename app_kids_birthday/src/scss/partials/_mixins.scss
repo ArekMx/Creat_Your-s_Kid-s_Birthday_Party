@@ -1,0 +1,97 @@
+@mixin box-style($width, $height) {
+  width: $width;
+  height: $height;
+  //background-color: $background;
+  //color: $nav_sidebar;
+  //border: 1px grey dashed;
+}
+
+@mixin backGroundColor {
+  background-color: #4a4a49;
+}
+
+@mixin box {
+  border: 1px solid black;
+}
+
+
+@mixin sliderArrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+@mixin actionOnAppButton {
+  border-left: 5px solid $logo;
+}
+@mixin landingPageBtn($width, $height, $fontSize) {
+  border: none;
+  outline: none;
+  width: $width;
+  height: $height;
+  font-size: $fontSize;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: $text_font;
+  font-weight: bold;
+  background-color: $buttons_and_highlights;
+  text-align: center;
+}
+
+
+
+@mixin plus-font {
+  display: flex;
+  justify-content: center;
+  font-family: "Font Awesome 5 Free";
+  content: '\f0fe';
+  font-size: 100px;
+  border-radius: 50%;
+  padding-top: 10px;
+}
+
+@mixin noticationsFont($fontCode, $fontColor) {
+  font-family: "Font Awesome 5 Free";
+  content: $fontCode;
+  font-size: 40px;
+  color: $fontColor;
+  padding: 5px;
+}
+
+@mixin double-arrow($awsome-font-style) {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  content: $awsome-font-style;
+  font-size: 15px;
+  padding: 5px;
+  position: relative;
+  top: 2px;
+}
+
+@mixin mobile {
+  text-align: center;
+  @media (min-width: 375px) {
+    @content
+  }
+}
+@mixin tablet {
+  text-align: center;
+  @media (min-width: 768px) {
+    @content
+  }
+}
+@mixin desktop {
+  text-align: center;
+  @media (min-width: 1200px) {
+    @content
+  }
+}

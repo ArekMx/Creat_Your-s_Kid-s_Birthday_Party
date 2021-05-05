@@ -1,0 +1,72 @@
+
+@mixin box {
+  border: 1px dashed black;
+  border-radius: 20px;
+  background-color: deepskyblue;
+}
+
+@mixin button {
+  height: 50px;
+  border-radius: 20px;
+  background-color: purple;
+  color: whitesmoke;
+  border: none;
+}
+
+.packagesBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+
+  &__description {
+    h2 {
+      padding: 10px;
+    }
+    .description_list {
+      list-style: none;
+      &__element {
+        width: 250px;
+        height: 100px;
+        padding: 20px;
+        border-top: 5px solid whitesmoke ;
+
+      }
+    }
+  }
+  &__packages {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 500px;
+    position: relative;
+    right: 10%;
+    padding-left: 80px;
+    animation: puls 4s 4s infinite linear;
+    .package {
+
+      .package-check {
+        @include box;
+        .title {
+          padding: 5px;
+          text-align: center;
+        }
+        .stars {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          span {
+            font-size: 30px;
+            font-weight: bold;
+            color: #FFB03B;
+            height: 100px;
+            padding: 50px;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}

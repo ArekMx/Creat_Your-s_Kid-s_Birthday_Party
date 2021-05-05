@@ -1,0 +1,58 @@
+@mixin box {
+  border: 1px dashed black;
+  border-radius: 20px;
+  background-color: deepskyblue;
+}
+
+.welcome {
+
+  width: 100%;
+  padding: 50px;
+
+  .welcomeBox {
+    @include box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      margin: 50px;
+      text-align: center;
+    }
+
+    &__button {
+      button {
+        cursor: pointer;
+        background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%);
+        margin: 10px;
+        padding: 25px 55px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 23px;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 20px deeppink;
+        border-radius: 10px;
+        display: block;
+        &:hover {
+          background-position: right center; /* change the direction of the change here */
+          color: #fff;
+          text-decoration: none;
+        }
+        span {
+          padding: 0 10px;
+        }
+      }
+    }
+    &__title,
+    &__button {
+      padding: 20px;
+    }
+  }
+
+}
+
+
+
+
