@@ -1,4 +1,7 @@
 import React from "react"
+import Slider from 'react-smooth-range-input';
+
+
 
 export const BirthDate =()=> {
 
@@ -8,9 +11,7 @@ export const BirthDate =()=> {
                 <h2>Liczba dzieci</h2>
             </div>
             <div>
-                <label className={"checkbox"}>
-                    <input type="number"/>
-                </label>
+                <Slider value={1} min={1} max={30} />
             </div>
             <div>
                 <h2>Imię solenizanta</h2>

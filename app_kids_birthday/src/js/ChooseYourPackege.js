@@ -3,6 +3,7 @@ import React, {useState} from "react"
 import {Selected} from "./Selected";
 import {Addition} from "./Addition";
 import {BirthDate} from "./BirthDate";
+import {SendingOffer} from "./SendingOffer";
 
 export const ChooseYourPackage = () => {
 
@@ -73,7 +74,9 @@ export const ChooseYourPackage = () => {
             <div className={"total"}>
                 <h1>Razem: <span>.....</span></h1>
             </div>
+                < SendingOffer />
         </form>
+
         </div>
     )
 }

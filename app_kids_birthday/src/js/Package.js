@@ -18,7 +18,7 @@ export const Package = ({
 }) => {
 
     // const star = '<i class=\"fas fa-star\"></i>'
-    const star = '<img src={"./"}>'
+    // const star = '<img src={"./"}>'
 
     return (
         <div className={"package"}>

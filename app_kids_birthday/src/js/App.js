@@ -20,9 +20,6 @@ function App() {
         <section>
             <ChooseYourPackage />
         </section>
-        <section>
-            <SendingOffer />
-        </section>
     </div>
   );
 }
