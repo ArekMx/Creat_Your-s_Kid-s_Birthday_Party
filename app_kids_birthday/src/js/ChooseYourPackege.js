@@ -29,35 +29,38 @@ export const ChooseYourPackage = () => {
     const attractions = "10"
 
     return (
-        <form>
-            <table>
-                <tbody>
-                <tr>
-                    <th>Pakiet dla 10 dzieci</th>
-                    <th>Pakiet prosiaczek</th>
-                    <th>Pakiet tygrsek</th>
-                    <th>Pakiet puchatek</th>
-                </tr>
-                <tr>
-                    <th>Poniedziałek - czwartek</th>
-                    <th><Selected price={firstWeekPrice} /></th>
-                    <th><Selected price={secondWeekPrice} /></th>
-                    <th><Selected price={thirdWeekPrice} /></th>
-                </tr>
-                <tr>
-                    <th>Piątek - niedziela</th>
-                    <th><Selected price={firstWeekendPrice} /></th>
-                    <th><Selected price={secondWeekendPrice} /></th>
-                    <th><Selected price={thirdWeekendPrice} /></th>
-                </tr>
-                <tr>
-                    <th>Dodatkowe dziecko</th>
-                    <th><Selected price={firstPackageChild} /></th>
-                    <th><Selected price={secondPackageChild} /></th>
-                    <th><Selected price={thirdPackageChild} /></th>
-                </tr>
-                </tbody>
-            </table>
+        <div className={"chooseYourPackage"}>
+        <form className={"form"}>
+            <div className={"form__table"}>
+                <table>
+                    <tbody>
+                    <tr className={"tableHeader"}>
+                        <th>Pakiet dla 10 dzieci</th>
+                        <th>Pakiet prosiaczek</th>
+                        <th>Pakiet tygrsek</th>
+                        <th>Pakiet puchatek</th>
+                    </tr>
+                    <tr>
+                        <th className={"weekdays"}>Poniedziałek - czwartek</th>
+                        <th><Selected price={firstWeekPrice} /></th>
+                        <th><Selected price={secondWeekPrice} /></th>
+                        <th><Selected price={thirdWeekPrice} /></th>
+                    </tr>
+                    <tr>
+                        <th className={"weekdays"}>Piątek - niedziela</th>
+                        <th><Selected price={firstWeekendPrice} /></th>
+                        <th><Selected price={secondWeekendPrice} /></th>
+                        <th><Selected price={thirdWeekendPrice} /></th>
+                    </tr>
+                    <tr>
+                        <th>Dodatkowe dziecko</th>
+                        <th><Selected price={firstPackageChild} /></th>
+                        <th><Selected price={secondPackageChild} /></th>
+                        <th><Selected price={thirdPackageChild} /></th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
             <div>
                 < BirthDate />
             </div>
@@ -71,5 +74,6 @@ export const ChooseYourPackage = () => {
                 <h1>Razem: <span>.....</span></h1>
             </div>
         </form>
+        </div>
     )
 }

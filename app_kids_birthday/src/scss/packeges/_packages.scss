@@ -16,21 +16,23 @@
 .packagesBox {
   width: 100%;
   display: flex;
-  justify-content: center;
-  margin: 15px;
-
+  justify-content: left;
+  margin: 1px;
+  overflow: auto;
   &__description {
     h2 {
+      text-align: center;
       padding: 10px;
     }
     .description_list {
       list-style: none;
+      padding-left: 5px;
       &__element {
         width: 250px;
         height: 100px;
         padding: 20px;
-        border-top: 5px solid whitesmoke ;
-
+        border-top: 5px solid yellow ;
+        font-size: 18px;
       }
     }
   }
@@ -38,17 +40,17 @@
     display: flex;
     flex-wrap: nowrap;
     height: 500px;
+    width: 150px;
     position: relative;
-    right: 10%;
-    padding-left: 80px;
     animation: puls 4s 4s infinite linear;
     .package {
-
+      width: 70px;
       .package-check {
         @include box;
         .title {
-          padding: 5px;
+          padding-top: 10px;
           text-align: center;
+          font-size: 14px;
         }
         .stars {
           display: flex;
