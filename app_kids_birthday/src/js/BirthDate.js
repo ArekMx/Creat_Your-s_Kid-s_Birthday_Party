@@ -1,9 +1,16 @@
-import React from "react"
-import Slider from 'react-smooth-range-input';
+import React, {useState} from "react"
 
+import Slider from 'react-smooth-range-input';
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 
 export const BirthDate =()=> {
+
+    const [startDate, setStartDate] = useState(new Date());
+
+    console.log(startDate)
 
     return (
         <>
@@ -25,9 +32,7 @@ export const BirthDate =()=> {
                 <h2>Data imprezy</h2>
             </div>
             <div>
-                <label className={"birthdayDate"}>
-                    <input type="text"/>
-                </label>
+                <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
             </div>
         </>
 
