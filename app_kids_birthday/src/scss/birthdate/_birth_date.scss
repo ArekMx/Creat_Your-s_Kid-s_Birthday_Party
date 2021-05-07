@@ -1,0 +1,42 @@
+.birth-date {
+  margin: 50px;
+
+  .number-of-kids {
+    color: #FF6600;
+    input {
+      background-color: #FF6600;
+    }
+  }
+
+  .kid-name {
+    color: #00ecbc;
+    input {
+      width: 200px;
+      height: 35px;
+      font-size: 25px;
+      font-family: 'Itim';
+      background-color: #00ecbc;
+      color: #FFFFFA;
+    }
+  }
+
+  .birthday-party-date {
+    color: #FF009B;
+    input {
+      width: 200px;
+      height: 35px;
+      font-size: 25px;
+      font-family: 'Itim';
+      background-color: #FF009B;
+      color: #FFFFFA;
+    }
+  }
+
+  .number-of-kids,
+  .kid-name,
+  .birthday-party-date {
+    margin: 20px;
+  }
+
+
+}

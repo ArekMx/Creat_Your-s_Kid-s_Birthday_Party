@@ -4,6 +4,12 @@
 }
 
 body {
-    width: 100vw;
-    background-color: #468966;
+    //background-color: #007adf;
+    width: 100%;
+    background: linear-gradient(to top, #007adf 0%, #00ecbc 100%);
+    background-repeat: no-repeat;
+    height: 100%;
 }
+    .after-body {
+
+    }

@@ -1,0 +1,48 @@
+
+
+.form-table {
+  tbody {
+    .header-cells {
+      th {
+        border-radius: 50px;
+        box-shadow: 0 5px 12px 6px #9599E2;
+        background-color: #24C6DC;
+      }
+      color: #F4D03F;
+      &__tenkids{
+        color: #FFFFFA;
+      }
+      &__piggy {
+
+      }
+      &__tiger{
+
+      }
+      &__pooh {
+
+      }
+    }
+
+    .week-days {
+      color: #FF6600;
+    }
+    .weekend-days {
+      color: #FF009B;
+    }
+    .extra-kid {
+      color: #30FF00;
+    }
+
+    th {
+
+      @media (min-width: 410px) {
+        padding: 10px;
+      }
+
+      @media (min-width: 768px) {
+        padding: 30px;
+        font-size: 25px;
+      }
+    }
+  }
+}

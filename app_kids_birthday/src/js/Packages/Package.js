@@ -26,7 +26,7 @@ export const Package = ({
             <div className={"package-check"}>
                 <h3 className={"title"}>{name}</h3>
                 <div className={"stars"}>
-                    <span>{twoHoursFun ? <img src="../img/star.svg" alt=""/> : null}</span>
+                    <span>{twoHoursFun ? <img src="../../img/star.svg" alt="star"/> : null}</span>
                     <span>{birthDayPlace ? ("*") : null}</span>
                     <span>{invitations ? ("*") : null}</span>
                     <span>{tablewareKids ? ("*") : null}</span>

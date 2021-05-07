@@ -22,8 +22,11 @@ export const Packages = () => {
 
     return (
         <div className={"packagesBox"}>
+            <div>
+                {/*<img src="../../img/baloons.svg" alt="baloons"/>*/}
+            </div>
             <div className={"packagesBox__description"}>
-                <h2>Pakiet urodzinowy <br/>dla 10 dzieci</h2>
+                <h3>Pakiet urodzinowy <br/>dla 10 dzieci</h3>
                 <ul className={"description_list"}>
                     {
                         options.map((el, index)=> <li className={"description_list__element"} key={index}>{el}</li>)

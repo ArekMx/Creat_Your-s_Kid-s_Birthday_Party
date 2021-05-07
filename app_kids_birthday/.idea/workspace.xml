@@ -1,8 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bfd72657-0781-461b-9b7a-a7945928e686" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/Additives.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/birthdate/_birth_date.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_addition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_additives.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_package_price.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_selected.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_sending_offer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/balloons_packages.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/Addition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/Addition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/BirthDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/BirthDate/BirthDate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/ChooseYourPackege.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/ChooseYourPackage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/Package.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Packages/Package.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/Packages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Packages/Packages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/Selected.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/Selected.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/SendingOffer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/SendingOffer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Welcome/Welcome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/choose_your_packege/_choose_your_package.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_choose_your_package.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/partials/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/partials/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sending_offer/_sending_offer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/PackagePrices.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1s56BawbTqJpR7U8aFoeBLhMxmb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/scss/choose_your_packege" />
+      <recent name="$PROJECT_DIR$/src/js/Welcome" />
+      <recent name="$PROJECT_DIR$/src/js/BirthDate" />
+      <recent name="$PROJECT_DIR$/src/js/Packages" />
+      <recent name="$PROJECT_DIR$/src/js/ChooseYourPackege" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bfd72657-0781-461b-9b7a-a7945928e686" name="Default Changelist" comment="" />
+      <created>1620149968963</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620149968963</updated>
+      <workItem from="1620149970008" duration="40052000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="674" y="355" width="627" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1620293070597">
+      <screen x="66" y="27" width="1854" height="1053" />
+    </state>
+    <state x="674" y="355" width="627" height="403" key="#com.intellij.fileTypes.FileTypeChooser/66.27.1854.1053@66.27.1854.1053" timestamp="1620293070597" />
+    <state x="774" y="468" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620305648975">
+      <screen x="66" y="27" width="1854" height="1053" />
+    </state>
+    <state x="774" y="468" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/66.27.1854.1053@66.27.1854.1053" timestamp="1620305648975" />
   </component>
 </project>
