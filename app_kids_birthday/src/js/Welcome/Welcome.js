@@ -3,7 +3,7 @@ import React, {useState} from "react"
 export const Welcome = (props) => {
 
     const [hideButton, setHideButton] = useState(false)
-    console.log(hideButton)
+    // console.log(hideButton)
 
     const showPackages =()=> {
 

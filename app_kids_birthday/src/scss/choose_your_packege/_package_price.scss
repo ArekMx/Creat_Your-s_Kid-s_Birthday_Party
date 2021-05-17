@@ -40,9 +40,23 @@
       }
 
       @media (min-width: 768px) {
-        padding: 30px;
+        padding: 10px;
         font-size: 25px;
       }
     }
   }
+}
+
+.youChoosePackage {
+  padding-top: 40px;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+   span {
+     display: inline-block;
+     position: relative;
+     //top: 120px
+   }
+
 }

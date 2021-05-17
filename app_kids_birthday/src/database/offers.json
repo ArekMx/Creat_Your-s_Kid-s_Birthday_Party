@@ -1,0 +1,21 @@
+{
+  "offers":[
+    {
+      "id": 1,
+      "package": "299",
+      "number_of_kids": "12",
+      "kid_name": "Franek",
+      "birthday_date": "12.08.21",
+      "additives": [
+        "animator",
+        "throne",
+        "balloons",
+        "attractions"
+      ],
+      "total": "670",
+      "name": "Joanna",
+      "e-mail": "costam@wp.pl",
+      "phone": "798235760"
+    }
+  ]
+}

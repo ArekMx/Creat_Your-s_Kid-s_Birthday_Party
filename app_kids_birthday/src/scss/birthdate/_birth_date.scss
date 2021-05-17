@@ -11,11 +11,14 @@
   .kid-name {
     color: #00ecbc;
     input {
+      border-bottom-color: #00ecbc;
+      border-width: 0 0 3px 0;
+      outline: none;
       width: 200px;
       height: 35px;
       font-size: 25px;
       font-family: 'Itim';
-      background-color: #00ecbc;
+      background: none;
       color: #FFFFFA;
     }
   }
@@ -23,11 +26,14 @@
   .birthday-party-date {
     color: #FF009B;
     input {
+      border-bottom-color: #FF009B;
+      border-width: 0 0 3px 0;
+      outline: none;
       width: 200px;
       height: 35px;
       font-size: 25px;
       font-family: 'Itim';
-      background-color: #FF009B;
+      background: none;
       color: #FFFFFA;
     }
   }

@@ -1,4 +1,30 @@
 
+.img-balloons {
+  display: block;
+  width: 245px;
+  height: 245px;
+  position: absolute;
+  left: 70px;
+  top: -20px;
+  z-index: 1;
+  padding: 5px;
+  margin-top: 10px;
+  @media (min-width: 410px) {
+    width: 245px;
+    height: 245px;
+    left: 150px;
+    top: -20px;
+  }
+  @media (min-width: 768px) {
+    left: 300px;
+  }
+
+
+  @media (min-width: 1280px) {
+    left: 400px;
+  }
+}
+
 @mixin box {
   border: 1px dashed black;
   border-radius: 20px;
@@ -23,6 +49,7 @@
 }
 
 .packagesBox {
+  padding-top: 230px;
   display: flex;
   justify-content: center;
   //overflow: auto;
@@ -31,6 +58,9 @@
   position: absolute;
   transform: scale(0);
   animation: animation1 3s linear forwards;
+  @media (min-width: 410px) {
+    width: 50%;
+  }
   &__description {
     h3 {
       text-align: center;
@@ -58,6 +88,9 @@
     animation: puls 4s 4s infinite linear;
     .package {
       width: 70px;
+      @media (min-width: 410px) {
+        width: 400px;
+      }
       .package-check {
         @include box;
         .title {
@@ -83,5 +116,4 @@
     }
 
   }
-
 }

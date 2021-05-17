@@ -1,4 +1,11 @@
 
+.birth-table-img {
+  width: 95%;
+  @media (min-width: 410px) {
+    width: 70%;
+  }
+}
+
 .chooseYourPackage{
   &__form {
     display: flex;

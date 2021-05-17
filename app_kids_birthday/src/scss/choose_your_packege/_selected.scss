@@ -1,23 +1,12 @@
 .selected {
   cursor: pointer;
-  color: gold;
-  input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  span {
-    height: 60px;
-    flex-shrink: 0;
-    flex-basis: 60px;
-
-    cursor: pointer;
-    &:hover {
-      border: 5px solid gold;
-      color: gold;
-      border-radius: 5px;
-    }
-  }
+  color: black;
+}
+.selected-button {
+  outline: none;
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-family: "Itim";
+  font-size: 20px;
 }

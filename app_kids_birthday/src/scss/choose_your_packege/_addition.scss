@@ -1,27 +1,15 @@
 .addition {
   margin: 30px 0;
+  .plus-circle {
+    position: relative;
+    top: 3px;
+    right: 3px;
+  }
 
   text-align: center;
-  &__ele{
-    cursor: pointer;
-    color: #FFFFFA;
-    input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-      &:checked + span {
-        color: gold;
-        border-radius: 5px;
-      }
-    }
-    span {
-      height: 60px;
-      flex-shrink: 0;
-      flex-basis: 60px;
-      cursor: pointer;
-      font-size: 25px;
-    }
+  button {
+    outline: none;
+    background: none;
+    border: none;
   }
 }

@@ -16,6 +16,7 @@
       input {
         border-bottom-color: #F4D03F;
         border-width: 0 0 3px 0;
+        outline: none;
         width: 200px;
         color: #FFFFFA;
         height: 35px;
@@ -64,7 +65,7 @@
     }
   }
 
-  button {
+  .sending-offer-btn {
     cursor: pointer;
     background-image: linear-gradient(to right, #16A085 0%, #F4D03F  51%, #16A085  100%);
     margin: 10px;
@@ -75,7 +76,7 @@
     background-size: 200% auto;
     color: white;
     box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
+    //border-radius: 10px;
     display: block;
     &:hover {
       background-position: right center; /* change the direction of the change here */

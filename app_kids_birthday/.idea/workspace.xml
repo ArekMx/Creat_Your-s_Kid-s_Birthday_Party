@@ -2,27 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfd72657-0781-461b-9b7a-a7945928e686" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/Additives.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/birthdate/_birth_date.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_addition.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_additives.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_package_price.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_selected.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_sending_offer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/balloons_packages.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Addition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/Addition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/BirthDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/BirthDate/BirthDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/ChooseYourPackege.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/ChooseYourPackage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Package.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Packages/Package.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Packages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Packages/Packages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Selected.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/Selected.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/SendingOffer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/SendingOffer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Welcome/Welcome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/star.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/OffersAPI/OffersApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/birthday_table.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/birthday_table.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/star.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/star.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/ChooseYourPackage/Addition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/Addition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/ChooseYourPackage/ChooseYourPackage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/ChooseYourPackage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/ChooseYourPackage/Selected.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/Selected.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/Packages/Package.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Packages/Package.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/Packages/Packages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Packages/Packages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/Welcome/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Welcome/Welcome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/birthdate/_birth_date.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/birthdate/_birth_date.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/choose_your_packege/_addition.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_addition.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/choose_your_packege/_choose_your_package.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_choose_your_package.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/choose_your_packege/_selected.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_selected.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/choose_your_packege/_sending_offer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/choose_your_packege/_sending_offer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/partials/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/partials/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sending_offer/_sending_offer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/ChooseYourPackage/PackagePrices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/packeges/_packages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/packeges/_packages.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,20 +46,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Prework/JavaScript/JS/WRO_FER_W_16_JavaScript" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/src/scss/choose_your_packege" />
       <recent name="$PROJECT_DIR$/src/js/Welcome" />
       <recent name="$PROJECT_DIR$/src/js/BirthDate" />
       <recent name="$PROJECT_DIR$/src/js/Packages" />
-      <recent name="$PROJECT_DIR$/src/js/ChooseYourPackege" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -74,6 +75,10 @@
       <option name="presentableId" value="Default" />
       <updated>1620149968963</updated>
       <workItem from="1620149970008" duration="40052000" />
+      <workItem from="1620410779017" duration="13987000" />
+      <workItem from="1620576145178" duration="328000" />
+      <workItem from="1620636709158" duration="469000" />
+      <workItem from="1620646861612" duration="20114000" />
     </task>
     <servers />
   </component>
@@ -85,9 +90,17 @@
       <screen x="66" y="27" width="1854" height="1053" />
     </state>
     <state x="674" y="355" width="627" height="403" key="#com.intellij.fileTypes.FileTypeChooser/66.27.1854.1053@66.27.1854.1053" timestamp="1620293070597" />
+    <state x="776" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1620670744331">
+      <screen x="66" y="27" width="1854" height="1053" />
+    </state>
+    <state x="776" y="311" width="424" height="491" key="FileChooserDialogImpl/66.27.1854.1053/1920.0.1680.1050@66.27.1854.1053" timestamp="1620670744331" />
     <state x="774" y="468" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620305648975">
       <screen x="66" y="27" width="1854" height="1053" />
     </state>
     <state x="774" y="468" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/66.27.1854.1053@66.27.1854.1053" timestamp="1620305648975" />
+    <state x="656" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1620670707647">
+      <screen x="66" y="27" width="1854" height="1053" />
+    </state>
+    <state x="656" y="259" width="672" height="678" key="search.everywhere.popup/66.27.1854.1053/1920.0.1680.1050@66.27.1854.1053" timestamp="1620670707647" />
   </component>
 </project>

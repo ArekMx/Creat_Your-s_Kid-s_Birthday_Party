@@ -1,7 +1,11 @@
 import React from "react"
 import {Package} from "./Package";
+import Balloons from "../../img/baloons.svg";
+
+
 
 export const Packages = () => {
+
 
     const options = [
         "2-godzinna wspaniała zabawa",
@@ -22,9 +26,7 @@ export const Packages = () => {
 
     return (
         <div className={"packagesBox"}>
-            <div>
-                {/*<img src="../../img/baloons.svg" alt="baloons"/>*/}
-            </div>
+            <img className={"img-balloons"} src={Balloons} alt={"balloons"}/>
             <div className={"packagesBox__description"}>
                 <h3>Pakiet urodzinowy <br/>dla 10 dzieci</h3>
                 <ul className={"description_list"}>
@@ -33,6 +35,7 @@ export const Packages = () => {
                     }
                 </ul>
             </div>
+
             <div className={"packagesBox__packages"}>
                 <Package name={"Prosiaczek"}
                          twoHoursFun={true}
