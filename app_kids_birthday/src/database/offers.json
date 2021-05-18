@@ -1,11 +1,13 @@
 {
-  "offers":[
+  "offers": [
     {
       "id": 1,
       "package": "299",
+      "price_for_extra_kid": "35",
       "number_of_kids": "12",
       "kid_name": "Franek",
       "birthday_date": "12.08.21",
+      "hour": "11.00 - 13.00",
       "additives": [
         "animator",
         "throne",

@@ -11,25 +11,30 @@ export const BirthDate =({onAdd})=> {
     const [birthdayDate, setBirthdayDate] = useState(new Date());
     const [kidName, setKidName] = useState('');
     const [numberOfKids, setNumberOfKids] = useState('1');
+    const [hour, setHour] = useState('');
 
     const handleNumberOfKids =(selectedNumber) => {
 
          setNumberOfKids(selectedNumber)
-        // onAdd(numberOfKids)
     }
 
     const handleName =(event) => {
 
         setKidName(event.target.value)
-        // onAdd(kidName)
     }
 
     const handleDate =(date) => {
 
         setBirthdayDate(date)
-        // onAdd(birthdayDate)
     }
-    onAdd(numberOfKids, kidName, birthdayDate)
+
+    const handleHour = (event) => {
+
+        setHour(event.target.value)
+    }
+
+
+    onAdd(numberOfKids, kidName, birthdayDate, hour)
 
 
     return (
@@ -47,6 +52,14 @@ export const BirthDate =({onAdd})=> {
             <div className={"birthday-party-date"}>
                 <h2>Data imprezy:</h2>
                 <DatePicker selected={birthdayDate} onChange={handleDate} />
+            </div>
+            <div>
+                <select value={hour} onChange={handleHour} >
+                    <option value="Wybierz godzinę">Wybierz godzinę</option>
+                    <option value="11.00 - 14.00">11.00 - 14.00</option>
+                    <option value="14.00 - 16.00">14.00 - 16.00</option>
+                    <option value="17.00 - 19.00">17.00 - 19.00</option>
+                </select>
             </div>
         </div>
     )

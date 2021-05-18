@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 
 // import {Additives} from "./Additives";
+import {addOffer, getOffers} from "../OffersAPI/OffersApi";
 import {Addition} from "./Addition";
 import {BirthDate} from "../BirthDate/BirthDate";
 import {SendingOffer} from "./SendingOffer";
@@ -38,62 +39,31 @@ export const ChooseYourPackage = () => {
         },
     }
 
-    const [pacage, setPacage] = useState('');
-    // console.log(pacage)
-    const [numberOfKids, setNumberOfKids] = useState('1');
-    // console.log(numberOfKids)
-    const [kidName, setKidName] = useState('');
-    // console.log(kidName)
-    const [birthdayDate, setBirthdayDate] = useState(new Date());
-    // console.log(birthdayDate)
-    const [name, setName] = useState('');
-    // console.log(name)
-    const [email, setEmail] = useState('');
-    // console.log(email)
-    const [phone, setPhone] = useState('');
-    // console.log(phone)
-    const [extraKid, setExtraKid] = useState('')
-
-    const [total, setTotal] = useState('');
 
 
-    const [offers, setOffers] = useState([])
-    const [additives, setAdditives] = useState([])
+    useEffect(() => {
+        setTotal(pacage)
+    },[])
 
-    // Prices for additives
-    const [pricesPerAttractions, setPricesPerAttractions] = useState([]);
-    // console.log(pricesPerAttractions)
-
-    // Prices for additives paid from the child
-    const [additivesForAChild, setAdditivesForAChild] = useState([]);
-
-    const [afterChoosePackage, setAfterChoosePackage] = useState(false);
-    const [currentPackage, setCurrentPackage] = useState('');
-    const [youChoosePackage, setYouChoosePackage] = useState('');
-
-    //Validation
-
-
-
-
-    // useEffect(() => {
-    //     setTotal(pacage)
-    // },[])
-    //
-    // useEffect(()=> {
-    //     getOffers().then(
-    //         (data) => setOffers([...data])
-    //     )
-    // }, []);
+    useEffect(()=> {
+        getOffers().then(
+            (data) => setOffers([...data])
+        )
+    }, []);
 
 
 
     /////////// Component - PackagePrices ////////////
+    const [pacage, setPacage] = useState('');
+    const [afterChoosePackage, setAfterChoosePackage] = useState(false);
+    const [currentPackage, setCurrentPackage] = useState('');
+    const [youChoosePackage, setYouChoosePackage] = useState('');
+    const [extraKid, setExtraKid] = useState('');
+
     const handlePackage =(valePackage)=> {
-        // console.log(valePackage)
         setPacage(valePackage);
         setAfterChoosePackage(true);
-        setCurrentPackage(valePackage)
+        setCurrentPackage(valePackage);
 
         if (valePackage === "299" || valePackage === "349")  {
             setExtraKid(pricesExtraKid.firstPackageChild);
@@ -111,15 +81,27 @@ export const ChooseYourPackage = () => {
 
 
     /////////// Component - BirthDate ///////////
-    const handleBirthDate =(numberOfKids, kidName, birthdayDate)=> {
+    const [numberOfKids, setNumberOfKids] = useState('1');
+    const [kidName, setKidName] = useState('');
+    const [birthdayDate, setBirthdayDate] = useState(new Date());
+    const [hour, setHour] = useState('');
+
+    const handleBirthDate =(numberOfKids, kidName, birthdayDate, hour)=> {
         setNumberOfKids(numberOfKids);
         setKidName(kidName);
         setBirthdayDate(birthdayDate);
+        setHour(hour);
     }
 
 
+    ////////// Component - Additives ///////////
 
-    ////////// Component - Additives ////////////
+    const [additives, setAdditives] = useState([]);
+
+    // Prices for additives
+    const [pricesPerAttractions, setPricesPerAttractions] = useState([]);
+    // Prices for additives paid from the child
+    const [additivesForAChild, setAdditivesForAChild] = useState([]);
 
     const addAddition =(valueAddition, price)=> {
 
@@ -160,6 +142,9 @@ export const ChooseYourPackage = () => {
     }
 
     //////// Component - SendingOffer /////////
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
 
     const handlePersonalData =(name, email, phone)=> {
         setName(name);
@@ -174,49 +159,79 @@ export const ChooseYourPackage = () => {
     const [validName, setValidName] = useState('');
     const [validEmail, setValidEmail] = useState('');
     const [validPhone, setValidPhone] = useState('');
+    const [validRodo, setValidRodo] = useState('');
+    const [validBirthDate, setValidBirthDate] = useState('');
+    const [validHour, setValidHour] = useState('');
+
+    const [checkedAgreement, setCheckedAgreement] = useState(false);
+    const [checkedRodo, setCheckedRodo] = useState(false);
+    const [redBox, setRedBox] = useState(false)
+
+    const handleValidCheckBox = (agreement, rodo) => {
+        setCheckedAgreement(agreement);
+        setCheckedRodo(rodo);
+    }
 
     const isValid =()=> {
         let valid = true
 
         if(numberOfKids.length === 1) {
-            console.warn("Nie wybrano ilości dzieci")
             valid = false
             setValidNumberOfKids('Nie wybrano ilości dzieci');
         } else {
             setValidNumberOfKids('');
         }
         if(kidName.length===0) {
-            console.warn("Nie ustawiono imienia dziecka")
             valid = false
             setValidKidName('Nie ustawiono imienia dziecka');
         } else {
             setValidKidName('');
         }
 
+        console.log(birthdayDate === new Date())
+
+        if(birthdayDate === new Date()) {
+            valid = false
+            setValidBirthDate('Nie ustawiono daty urodzin');
+        } else {
+            setValidBirthDate('')
+        }
+
+        if(hour === '') {
+            valid = false
+            setValidHour('Nie ustawiono godziny urodzin');
+        } else {
+            setValidHour('')
+        }
+
         if(name.length===0) {
-            console.warn("Nie wpisano imienia opiekuna")
             valid = false
             setValidName('Nie wpisano imienia opiekuna');
         } else {
             setValidName('');
         }
 
-
-        if(email.length===0) {
-            console.warn("Nie wpisano adresu meilowego")
+        if(email.length===0 || email.indexOf("@") === -1) {
             valid = false
-            setValidEmail('Nie wpisano adresu meilowego');
+            setValidEmail('Nie wpisano adresu meilowego lub brakuje zanku "@"');
         } else {
             setValidEmail('');
         }
 
-
         if (phone.length === 0 || !Number.isInteger(Number(phone))) {
-            console.warn("Nie wpisano numeru telefonu lub nie jest liczbą całkowitą");
             valid = false;
             setValidPhone('Nie wpisano numeru telefonu lub nie jest liczbą całkowitą');
         } else {
             setValidPhone('');
+        }
+
+        if (checkedRodo !== true) {
+            valid = false;
+            setValidRodo('Uwaga! Zgoda na przetwarzanie danych jest wymagana.')
+            setRedBox(true);
+        } else {
+            setValidRodo('');
+            setRedBox(false);
         }
         return valid
     }
@@ -247,18 +262,16 @@ export const ChooseYourPackage = () => {
         if (additivesForAChild.length !== 0) {
             let sumOfAttractions = additivesForAChild.reduce((a, b) => parseInt(a + b));
             return sumOfAttractions * numberOfKids
-        } else {
-            console.log("Brak wybranych atrakcji dodatkowych płatnych od dziecka")
         }
     }
 
     const totalAdditivesPerAttractions =(pricesPerAttractions)=> {
         if (pricesPerAttractions.length !== 0) {
             return  pricesPerAttractions.reduce((a, b) => parseInt(a + b));
-        } else {
-            console.log("Brak wybranych atrakcji dodatkowych płatnych od atrakcji")
         }
     }
+
+    const [total, setTotal] = useState('');
 
     // Total without attractions
     let totalPriceWithoutAttractions = parseInt(pacage) + kidsNumber(numberOfKids)
@@ -290,6 +303,7 @@ export const ChooseYourPackage = () => {
         }
     })
 
+    const [offers, setOffers] = useState([]);
 
     const handleSubmit =(e)=> {
         e.preventDefault();
@@ -301,21 +315,28 @@ export const ChooseYourPackage = () => {
             number_of_kids: numberOfKids,
             kid_name: kidName,
             birthday_date: birthdayDate,
+            hour: hour,
             additives,
             total: total,
             name: name,
             email: email,
-            phone: phone
+            phone: phone,
+            advertisement: checkedAgreement
         }
 
 
         if (isValid()) {
-            setOffers(prevState => [...prevState, newOffer])
+            // setOffers(prevState => [...prevState, newOffer])
+
+            addOffer(newOffer)
+                .then((newOffer)=> { setOffers((prev)=> [...prev, newOffer])
+                }).catch(error => {
+                console.log(error);
+            });
         }
 
 
 
-        // addOffer(newOffer).then((newOffer)=> { setOffers((prev)=> [...prev, newOffer])})
 
         // console.log(package)
 
@@ -333,7 +354,6 @@ export const ChooseYourPackage = () => {
     return (
         <div className={"chooseYourPackage"}>
             <div className={"chooseYourPackage__form"}>
-            {/*<form className={"chooseYourPackage__form"} onSubmit={handleSubmit} >*/}
                 <h2>Wybierz któryś z poniższych pakietów!</h2>
                 < PackagePrices onAddPack={handlePackage} currentPackage={currentPackage} youChoosePackage={youChoosePackage}/>
                 {
@@ -350,21 +370,23 @@ export const ChooseYourPackage = () => {
                             <Addition price={extraAddition.attractions.price} name={extraAddition.attractions.text}  onAdd={addAddition}/>
                         </div>
                         < div className={"form-total"}> <h1> Razem: {total} zł </h1> </div>
-                        < SendingOffer onAdd={handlePersonalData}/>
+                        < SendingOffer checkBoxesValue={handleValidCheckBox} onAdd={handlePersonalData} checkBox={redBox}/>
+
                         <form onSubmit={handleSubmit} >
+                            <p style={{color: "white"}}>{validRodo}</p>
                             <button className={"sending-offer-btn"} >Wyśli zapytanie</button>
                             <p style={{color: "red"}}>{validNumberOfKids}</p>
                             <p style={{color: "red"}}>{validKidName}</p>
+                            <p style={{color: "red"}}>{validBirthDate}</p>
+                            <p style={{color: "red"}}>{validHour}</p>
                             <p style={{color: "red"}}>{validName}</p>
                             <p style={{color: "red"}}>{validEmail}</p>
                             <p style={{color: "red"}}>{validPhone}</p>
                             <p>Skontaktujemy się z Tobą w ciągu 24h</p>
                         </form>
-
                     </>
                     ) : null
                 }
-            {/*</form>*/}
             </div>
         </div>
     )

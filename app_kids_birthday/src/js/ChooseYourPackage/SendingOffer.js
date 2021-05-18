@@ -1,33 +1,33 @@
 import React, {useState} from "react"
 
-export const SendingOffer = ({onAdd}) => {
+export const SendingOffer = ({onAdd, checkBoxesValue, checkBox}) => {
 
 
     const [name, setName] = useState('');
-    // console.log(name)
     const [email, setEmail] = useState('');
-    // console.log(email)
     const [phone, setPhone] = useState('');
 
     const handleName =(event) => {
 
         setName(event.target.value)
-        // onAdd(name)
     }
 
     const handleEmail =(event) => {
 
         setEmail(event.target.value)
-        // onAdd(email)
     }
 
     const handlePhone =(event) => {
 
         setPhone(event.target.value)
-        // onAdd(phone)
     }
     onAdd(name, email, phone)
 
+
+    const [checkedAgreement, setCheckedAgreement] = useState(false);
+    const [checkedRodo, setCheckedRodo] = useState(false);
+
+    checkBoxesValue(checkedAgreement, checkedRodo)
 
 
     return (
@@ -53,13 +53,13 @@ export const SendingOffer = ({onAdd}) => {
             </div>
             <div className={"agreements"}>
                 <label className={"advertisement"}>
-                    <input type="checkbox"/>
+                    <input type="checkbox" onChange={() => setCheckedAgreement(!checkedAgreement)} defaultChecked={checkedAgreement}/>
                     <span></span>
                     Chcę otrzymywać informację o ekstra promocjach. Wyrażam zgodę na przetwarzanie moich danych osobowyh do celów marketingowych. Nie spamujemy!
                 </label>
                 <label className={"rodo"}>
-                    <input type="checkbox"/>
-                    <span></span>
+                    <input type="checkbox" onChange={() => setCheckedRodo(!checkedRodo)} defaultChecked={checkedRodo}/>
+                    <span style={{border: checkBox && !checkedRodo ? "3px solid red" : "3px solid cornflowerblue"}}></span>
                     Wyrażam zgodę na przetwarzanie moich danych osobowych w celu przygotowania i przedstawienia mi oferty na organizację Imprezy Urodzinowej. Zapoznałem się i akcetpuję Politykę Prywatnośći firmy.
                 </label>
             </div>
