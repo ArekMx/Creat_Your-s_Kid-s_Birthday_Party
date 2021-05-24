@@ -22,7 +22,6 @@ export const Packages = () => {
         "Zniżka na kolejne urodziny"
     ]
 
-
     return (
         <div className={"packagesBox"}>
 

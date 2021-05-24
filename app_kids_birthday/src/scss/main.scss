@@ -7,16 +7,16 @@
 @import "choose_your_packege/selected";
 @import "choose_your_packege/sending_offer";
 @import "packeges/packages";
-@import "./welcome/welcome";
-@import "./birthdate/birth_date";
+@import "welcome/welcome";
+@import "birthdate/birth_date";
 
 /* --- Imports from partials here --- */
-@import "./partials/reset";
-@import "./partials/fonts";
-@import "./partials/keyframes";
+@import "partials/reset";
+@import "partials/fonts";
+@import "partials/keyframes";
 @import "partials/mixins";
-@import "./partials/colors";
-@import "./partials/root";
+@import "partials/colors";
+@import "partials/root";
 
 
 
