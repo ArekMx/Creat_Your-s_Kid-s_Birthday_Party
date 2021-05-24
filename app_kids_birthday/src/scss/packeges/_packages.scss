@@ -1,28 +1,28 @@
+//@import "../main";
+@import "../partials/mixins";
+@import "../partials/colors";
 
 .img-balloons {
-  display: block;
-  width: 245px;
-  height: 245px;
+  display: inline-block;
+  width: 300px;
+  height: 400px;
   position: absolute;
-  left: 70px;
-  top: -20px;
+  margin-left: 20px;
+  top: -390px;
   z-index: 1;
-  padding: 5px;
-  margin-top: 10px;
-  @media (min-width: 410px) {
-    width: 245px;
-    height: 245px;
-    left: 150px;
-    top: -20px;
+  @include mobile-main  {
+    left: 5%;
   }
-  @media (min-width: 768px) {
-    left: 300px;
+  @include tablet-main {
+    left: 20%;
   }
+  @include desktop-main {
+  }
+}
 
-
-  @media (min-width: 1280px) {
-    left: 400px;
-  }
+.img-BirthDay {
+  width: 99%;
+  border-radius: 20px;
 }
 
 @mixin box {
@@ -49,71 +49,78 @@
 }
 
 .packagesBox {
-  padding-top: 230px;
-  display: flex;
-  justify-content: center;
-  //overflow: auto;
-  //border: 2px solid #4a4a49;
-  border-radius: 20px;
-  position: absolute;
-  transform: scale(0);
-  animation: animation1 3s linear forwards;
-  @media (min-width: 410px) {
-    width: 50%;
-  }
-  &__description {
-    h3 {
-      text-align: center;
-      padding: 5px;
-    }
-    .description_list {
-      list-style: none;
-      padding-left: 5px;
-      &__element {
-        width: 150px;
-        height: 100px;
+  width: 100%;
+  height: 100%;
+
+  .package-table {
+    background-color: $brown_background;
+    margin-top: 355px;
+    display: inline-block;
+    border: 3px solid #552929;
+    border-radius: 20px;
+    position: absolute;
+    transform: scale(0);
+    animation: animation1 3s linear forwards;
+
+    tbody {
+      .ten-kids {
+        color: $gold;
+        border-bottom: 2px solid $white;
+      }
+
+
+      .package-piggy,
+      .package-tiger,
+      .package-pooh {
         padding: 5px;
-        margin: 25px 0;
-        border-top: 5px solid yellow ;
-        font-size: 18px;
+        border-bottom: 4px solid $white;
+        color: $gold;
       }
-    }
-  }
-  &__packages {
-    display: flex;
-    flex-wrap: nowrap;
-    height: 500px;
-    width: 150px;
-    position: relative;
-    animation: puls 4s 4s infinite linear;
-    .package {
-      width: 70px;
-      @media (min-width: 410px) {
-        width: 400px;
+      .package-piggy {
+        border-bottom: 4px solid $piggy_color;
       }
-      .package-check {
-        @include box;
-        .title {
-          padding-top: 10px;
-          text-align: center;
-          font-size: 14px;
-        }
-        .stars {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          span {
-            font-size: 30px;
-            font-weight: bold;
-            color: #FFB03B;
-            height: 127px;
-            padding: 50px;
-          }
-        }
+      .package-tiger {
+        border-bottom: 4px solid $tiger_color;
+      }
+      .package-pooh {
+        border-bottom: 4px solid $pooh_color;
       }
 
+      .column-text{
+        padding: 5px;
+        color: $white;
+        border-bottom: 1px solid $white;
+      }
+      .column-piggy,
+      .column-tiger,
+      .column-pooh {
+        padding: 7px;
+      }
+
+
+    }
+    //@include tablet-main {
+    //  font-size: 20px;
+    //}
+    @include desktop-main {
+    }
+    .stars {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      span {
+        display: inline-block;
+        font-size: 30px;
+        font-weight: bold;
+        height: 127px;
+        width: 100%;
+        padding: 50px;
+      }
     }
 
   }
+
 }
+

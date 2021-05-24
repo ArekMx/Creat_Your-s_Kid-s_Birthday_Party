@@ -1,12 +1,16 @@
 import React, {useState, useEffect} from "react"
+import firebase from "../firebase";
 
 // import {Additives} from "./Additives";
-import {addOffer, getOffers} from "../OffersAPI/OffersApi";
+// import {addOffer, getOffers} from "../OffersAPI/OffersApi";
 import {Addition} from "./Addition";
 import {BirthDate} from "../BirthDate/BirthDate";
 import {SendingOffer} from "./SendingOffer";
 import {PackagePrices} from "./PackagePrices";
 import "react-datepicker/dist/react-datepicker.css";
+import BirthDay from "../../img/urodziny.gif";
+
+
 
 export const ChooseYourPackage = () => {
 
@@ -38,18 +42,6 @@ export const ChooseYourPackage = () => {
             text: "Dodatkowe atrakcje - malowanie buzi, warkoczyki, tatuaże"
         },
     }
-
-
-
-    useEffect(() => {
-        setTotal(pacage)
-    },[])
-
-    useEffect(()=> {
-        getOffers().then(
-            (data) => setOffers([...data])
-        )
-    }, []);
 
 
 
@@ -103,6 +95,8 @@ export const ChooseYourPackage = () => {
     // Prices for additives paid from the child
     const [additivesForAChild, setAdditivesForAChild] = useState([]);
 
+    const [resetColorBtn, setResetColorBtn] = useState(false);
+
     const addAddition =(valueAddition, price)=> {
 
         if (pacage.length !== 0) {
@@ -134,11 +128,18 @@ export const ChooseYourPackage = () => {
                     return [...prev, valueAddition];
                 }else {
                     return [...prev]
-                    // return prev.filter(el=> el !== addition);
+                    // return prev.filter(el=> el !== valueAddition);
                 }
             })
-            console.log(additives)
         }
+    }
+
+    const handleDelAdditives =()=> {
+        setAdditivesForAChild([]);
+        setPricesPerAttractions([]);
+        setAdditives([]);
+        setResetColorBtn(prevState => !prevState);
+
     }
 
     //////// Component - SendingOffer /////////
@@ -187,8 +188,6 @@ export const ChooseYourPackage = () => {
         } else {
             setValidKidName('');
         }
-
-        console.log(birthdayDate === new Date())
 
         if(birthdayDate === new Date()) {
             valid = false
@@ -303,11 +302,43 @@ export const ChooseYourPackage = () => {
         }
     })
 
+
     const [offers, setOffers] = useState([]);
 
-    const handleSubmit =(e)=> {
-        e.preventDefault();
+    //----- FireBase config -----//
+    const ref = firebase.firestore().collection("offers");
 
+    useEffect(() => {
+
+        ref.onSnapshot((snapshot => {
+            const offers = [];
+            snapshot.forEach(offer=> {
+                // console.log(offer.data())
+                offers.push(offer.data())
+            })
+            setOffers(offers)
+        }))
+
+    },[]);
+
+
+    //----- JSON SERVER config ----//
+    // useEffect(() => {
+    //     setTotal(pacage)
+    // },[])
+    //
+    // useEffect(()=> {
+    //     getOffers().then(
+    //         (data) => setOffers([...data])
+    //     )
+    // }, []);
+
+    const [thankYou, setThankYou] = useState('')
+
+
+    const handleSubmit =(e)=> {
+        e.preventDefault()
+        console.log(isValid())
 
         const newOffer = {
             package: pacage,
@@ -317,28 +348,31 @@ export const ChooseYourPackage = () => {
             birthday_date: birthdayDate,
             hour: hour,
             additives,
-            total: total,
             name: name,
             email: email,
             phone: phone,
-            advertisement: checkedAgreement
+            advertisement: checkedAgreement,
+            total: total,
+            date_send: new Date()
         }
-
-
         if (isValid()) {
-            // setOffers(prevState => [...prevState, newOffer])
 
-            addOffer(newOffer)
-                .then((newOffer)=> { setOffers((prev)=> [...prev, newOffer])
-                }).catch(error => {
-                console.log(error);
-            });
+            //---- FireBase config ----//
+            ref.add(newOffer)
+                .then((newOffer) =>
+                    setOffers(prev=> [...prev, newOffer]));
+
+            //---- JSON SERVER config ---//
+            // addOffer(newOffer)
+            //     .then((newOffer)=> { setOffers((prev)=> [...prev, newOffer])
+            //     }).catch(error => {
+            //     console.log(error);
+            // });
         }
+        // else {
+        //     e.preventDefault()
+        // }
 
-
-
-
-        // console.log(package)
 
         // setPacage('');
         // setKidName('');
@@ -347,14 +381,16 @@ export const ChooseYourPackage = () => {
         // setEmail('');
         // setPhone('');
     }
+
     console.log(offers)
 
 
 
     return (
         <div className={"chooseYourPackage"}>
+            <img className={"img-BirthDay"} src={BirthDay} alt={"BirthDay"}/>
             <div className={"chooseYourPackage__form"}>
-                <h2>Wybierz któryś z poniższych pakietów!</h2>
+                <h2 className={"chooseYourPackage-title"}>Wybierz któryś z poniższych pakietów!</h2>
                 < PackagePrices onAddPack={handlePackage} currentPackage={currentPackage} youChoosePackage={youChoosePackage}/>
                 {
                     afterChoosePackage ? (
@@ -364,14 +400,28 @@ export const ChooseYourPackage = () => {
                         {/*< Additives onAdd={handleAddition()}/>*/}
                         <div className={"additives"}>
                             <h1>Wybierz extra dodatki:</h1>
-                            <Addition price={extraAddition.animator.price} name={extraAddition.animator.text} onAdd={addAddition} />
-                            <Addition price={extraAddition.throne.price} name={extraAddition.throne.text}  onAdd={addAddition}/>
-                            <Addition price={extraAddition.balloons.price} name={extraAddition.balloons.text} onAdd={addAddition}/>
-                            <Addition price={extraAddition.attractions.price} name={extraAddition.attractions.text}  onAdd={addAddition}/>
+                            <Addition price={extraAddition.animator.price} name={extraAddition.animator.text} onAdd={addAddition} resetColorBtn={resetColorBtn}/>
+                            <Addition price={extraAddition.throne.price} name={extraAddition.throne.text}  onAdd={addAddition} resetColorBtn={resetColorBtn}/>
+                            <Addition price={extraAddition.balloons.price} name={extraAddition.balloons.text} onAdd={addAddition} resetColorBtn={resetColorBtn}/>
+                            <Addition price={extraAddition.attractions.price} name={extraAddition.attractions.text}  onAdd={addAddition} resetColorBtn={resetColorBtn}/>
+                            <button onClick={handleDelAdditives}>Usuń wszystkie dodatki</button>
                         </div>
-                        < div className={"form-total"}> <h1> Razem: {total} zł </h1> </div>
+                        < div className={"form-total"}>
+                            <h1> Razem: {total} zł </h1>
+                        </div>
                         < SendingOffer checkBoxesValue={handleValidCheckBox} onAdd={handlePersonalData} checkBox={redBox}/>
-
+                        <ul>
+                            {/*{*/}
+                            {/*    offers.map (offer => (*/}
+                            {/*        <li key={new Date()}>*/}
+                            {/*            Pakiet:{offer.package}<br/>*/}
+                            {/*            Liczba dzieci:{offer.number_of_kids}<br/>*/}
+                            {/*            Cena za dodatkowe dziecko: {offer.price_for_extra_kid}<br/>*/}
+                            {/*            Dodatki: {[...offer.additives]}<br/>*/}
+                            {/*        </li>*/}
+                            {/*    ))*/}
+                            {/*}*/}
+                        </ul>
                         <form onSubmit={handleSubmit} >
                             <p style={{color: "white"}}>{validRodo}</p>
                             <button className={"sending-offer-btn"} >Wyśli zapytanie</button>

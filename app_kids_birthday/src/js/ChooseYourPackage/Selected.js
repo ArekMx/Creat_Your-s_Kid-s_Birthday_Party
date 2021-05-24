@@ -4,7 +4,8 @@ export const Selected =({price, onAdd, currentPackage}) => {
 
     return (
         <div>
-            <button style={{color: parseFloat(currentPackage) === price ? "gold" : "black"}}
+            <button style={{border: parseFloat(currentPackage) === price ? "5px dotted #e70000" : null,
+            color: parseFloat(currentPackage) === price ? "#fff500" : null}}
                     value={price} onClick={event => onAdd(event.target.value) }
                     className={"selected-button"}>{price}</button>
         </div>

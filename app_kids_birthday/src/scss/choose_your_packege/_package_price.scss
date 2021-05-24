@@ -1,19 +1,22 @@
-
+@import "../partials/colors";
 
 .form-table {
   tbody {
+    padding: 20px 0;
+    text-align: center;
+    color: $white;
+    border: 5px dotted $tiger_color;
+    margin: 10px 0;
     .header-cells {
       th {
-        border-radius: 50px;
-        box-shadow: 0 5px 12px 6px #9599E2;
-        background-color: #24C6DC;
+        color: $white;
+        background-color: $tiger_color;
       }
-      color: #F4D03F;
       &__tenkids{
-        color: #FFFFFA;
+        color: $white;
       }
       &__piggy {
-
+        color: $piggy_color;
       }
       &__tiger{
 
@@ -24,13 +27,16 @@
     }
 
     .week-days {
-      color: #FF6600;
+      color: $white;
+      background-color: $tiger_color;
     }
     .weekend-days {
-      color: #FF009B;
+      color: $white;
+      background-color: $tiger_color;
     }
     .extra-kid {
-      color: #30FF00;
+      color: $green;
+      border: 5px solid $white;
     }
 
     th {

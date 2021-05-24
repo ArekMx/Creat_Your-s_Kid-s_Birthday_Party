@@ -64,8 +64,8 @@ export const PackagePrices =({onAddPack, currentPackage, youChoosePackage})=> {
                     <th><Selected price={pricesForPackageAtWeekend.secondWeekendPrice} onAdd={setBtn} addPackage={addPackage} currentPackage={currentPackage}/></th>
                     <th><Selected price={pricesForPackageAtWeekend.thirdWeekendPrice} onAdd={setBtn} addPackage={addPackage} currentPackage={currentPackage}/></th>
                 </tr>
-                <tr>
-                    <th className={"extra-kid"}>Dodatkowe dziecko</th>
+                <tr className={"extra-kid"}>
+                    <th>Dodatkowe dziecko</th>
                     <th>{pricesExtraKids.firstPackageChild}zł</th>
                     <th>{pricesExtraKids.secondPackageChild}zł</th>
                     <th>{pricesExtraKids.thirdPackageChild}zł</th>

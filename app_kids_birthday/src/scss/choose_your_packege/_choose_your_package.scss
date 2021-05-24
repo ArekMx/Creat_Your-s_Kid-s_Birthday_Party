@@ -1,3 +1,4 @@
+@import "../partials/colors";
 
 .birth-table-img {
   width: 95%;
@@ -7,6 +8,13 @@
 }
 
 .chooseYourPackage{
+  .chooseYourPackage-title {
+    padding: 20px 0;
+    text-align: center;
+    color: $white;
+    border: 15px dotted $tiger_color;
+    margin: 10px 0;
+  }
   &__form {
     display: flex;
     flex-direction: column;

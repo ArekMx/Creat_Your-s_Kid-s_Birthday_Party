@@ -1,11 +1,10 @@
 import React from "react"
-import {Package} from "./Package";
 import Balloons from "../../img/baloons.svg";
 
+import {PackageElement} from "./PackageElement";
 
 
 export const Packages = () => {
-
 
     const options = [
         "2-godzinna wspaniała zabawa",
@@ -26,64 +25,30 @@ export const Packages = () => {
 
     return (
         <div className={"packagesBox"}>
-            <img className={"img-balloons"} src={Balloons} alt={"balloons"}/>
-            <div className={"packagesBox__description"}>
-                <h3>Pakiet urodzinowy <br/>dla 10 dzieci</h3>
-                <ul className={"description_list"}>
-                    {
-                        options.map((el, index)=> <li className={"description_list__element"} key={index}>{el}</li>)
-                    }
-                </ul>
-            </div>
 
-            <div className={"packagesBox__packages"}>
-                <Package name={"Prosiaczek"}
-                         twoHoursFun={true}
-                         birthDayPlace={true}
-                         invitations={true}
-                         tablewareKids={true}
-                         tablewareParents={true}
-                         waterUnlimited={true}
-                         accessories={true}
-                         snacks={false}
-                         juices={false}
-                         decoration={false}
-                         gadgets={false}
-                         champagne={false}
-                         discount={false}
-                />
-                <Package name={"Tygrysek"}
-                         twoHoursFun={true}
-                         birthDayPlace={true}
-                         invitations={true}
-                         tablewareKids={true}
-                         tablewareParents={true}
-                         waterUnlimited={true}
-                         accessories={true}
-                         snacks={true}
-                         juices={true}
-                         decoration={false}
-                         gadgets={false}
-                         champagne={false}
-                         discount={false}/>
-                <Package name={"Puchatek"}
-                         twoHoursFun={true}
-                         birthDayPlace={true}
-                         invitations={true}
-                         tablewareKids={true}
-                         tablewareParents={true}
-                         waterUnlimited={true}
-                         accessories={true}
-                         snacks={true}
-                         juices={true}
-                         decoration={true}
-                         gadgets={true}
-                         champagne={true}
-                         discount={true}/>
-            </div>
-        </div>
-
-    )
-
-
-}
+            <table className={"package-table"}>
+                <img className={"img-balloons"} src={Balloons} alt={"balloons"}/>
+                <tbody>
+                    <tr >
+                        <th className={"ten-kids"}>Pakiet urodzinowy dla 10 dzieci</th>
+                        <th className={"package-piggy"}>Prosiaczek</th>
+                        <th className={"package-tiger"}>Tygrsek</th>
+                        <th className={"package-pooh"}>Puchatek</th>
+                    </tr>
+                    < PackageElement text={options[0]} PackOne={true} PackTwo={true} PackThree={true}/>
+                    < PackageElement text={options[1]} PackOne={true} PackTwo={true} PackThree={true}/>
+                    < PackageElement text={options[2]} PackOne={true} PackTwo={true} PackThree={true}/>
+                    < PackageElement text={options[3]} PackOne={true} PackTwo={true} PackThree={true}/>
+                    < PackageElement text={options[4]} PackOne={true} PackTwo={true} PackThree={true}/>
+                    < PackageElement text={options[5]} PackOne={true} PackTwo={true} PackThree={true}/>
+                    < PackageElement text={options[6]} PackOne={true} PackTwo={true} PackThree={true}/>
+                    < PackageElement text={options[7]} PackOne={false} PackTwo={true} PackThree={true}/>
+                    < PackageElement text={options[8]} PackOne={false} PackTwo={true} PackThree={true}/>
+                    < PackageElement text={options[9]} PackOne={false} PackTwo={true} PackThree={true}/>
+                    < PackageElement text={options[10]} PackOne={false} PackTwo={false} PackThree={true}/>
+                    < PackageElement text={options[11]} PackOne={false} PackTwo={false} PackThree={true}/>
+                    < PackageElement text={options[12]} PackOne={false} PackTwo={false} PackThree={true} display={true}/>
+                </tbody>
+            </table>
+        </div> )
+    }

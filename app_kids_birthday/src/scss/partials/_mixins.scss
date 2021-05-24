@@ -7,17 +7,17 @@
 }
 
 
-@mixin mobile {
-  @media (min-width: 375px) {
+@mixin mobile-main {
+  @media (min-width: 376px) {
     @content
   }
 }
-@mixin tablet {
-  @media (min-width: 768px) {
+@mixin tablet-main {
+  @media (min-width: 910px) {
     @content
   }
 }
-@mixin desktop {
+@mixin desktop-main {
   @media (min-width: 1200px) {
     @content
   }
