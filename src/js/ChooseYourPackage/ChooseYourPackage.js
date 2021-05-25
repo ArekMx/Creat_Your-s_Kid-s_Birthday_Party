@@ -390,7 +390,7 @@ export const ChooseYourPackage = () => {
         <div className={"chooseYourPackage"}>
             <img className={"img-BirthDay"} src={BirthDay} alt={"BirthDay"}/>
             <div className={"chooseYourPackage__form"}>
-                <h2 className={"chooseYourPackage-title"}>Wybierz któryś z poniższych pakietów!</h2>
+
                 < PackagePrices onAddPack={handlePackage} currentPackage={currentPackage} youChoosePackage={youChoosePackage}/>
                 {
                     afterChoosePackage ? (

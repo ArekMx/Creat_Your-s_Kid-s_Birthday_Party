@@ -8,12 +8,18 @@
 }
 
 .chooseYourPackage{
-  .chooseYourPackage-title {
-    padding: 20px 0;
+  .chooseYourPackage-box {
     text-align: center;
-    color: $white;
-    border: 15px dotted $tiger_color;
+    border: 10px dotted $border_choosePackage;
     margin: 10px 0;
+    background-color: $backgroundColor_choosePackage;
+    box-shadow: 0 0 22px 11px $gold
+  ;
+    &__title{
+      margin: 10px 0;
+      padding: 10px 0 20px 0;
+      border-bottom: 10px dotted $border_choosePackage;
+    }
   }
   &__form {
     display: flex;

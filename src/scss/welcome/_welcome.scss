@@ -10,11 +10,13 @@
   width: 100%;
   padding: 15px;
 
+
   .welcomeBox {
     @include box;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 0 22px 11px $pooh_color;
 
     &__title {
       //margin: 50px;

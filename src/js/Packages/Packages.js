@@ -24,7 +24,6 @@ export const Packages = () => {
 
     return (
         <div className={"packagesBox"}>
-
             <table className={"package-table"}>
                 <img className={"img-balloons"} src={Balloons} alt={"balloons"}/>
                 <tbody>

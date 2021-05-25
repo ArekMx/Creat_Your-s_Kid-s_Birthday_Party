@@ -43,7 +43,8 @@ export const PackagePrices =({onAddPack, currentPackage, youChoosePackage})=> {
 
 
     return (
-        <div >
+        <div className={"chooseYourPackage-box"}>
+            <h2 className={"chooseYourPackage-box__title"}>Wybierz któryś z poniższych pakietów!</h2>
             <table className={"form-table"}>
                 <tbody>
                 <tr className={"header-cells"}>
@@ -52,7 +53,7 @@ export const PackagePrices =({onAddPack, currentPackage, youChoosePackage})=> {
                     <th className={"tiger"}>Pakiet tygrsek</th>
                     <th className={"pooh"}>Pakiet puchatek</th>
                 </tr>
-                <tr >
+                <tr>
                     <th className={"week-days"}>Poniedziałek - czwartek</th>
                     <th><Selected price={pricesForPackageAtWeek.firstWeekPrice} onAdd={setBtn} addPackage={addPackage} currentPackage={currentPackage}/></th>
                     <th><Selected price={pricesForPackageAtWeek.secondWeekPrice} onAdd={setBtn} addPackage={addPackage} currentPackage={currentPackage}/></th>
@@ -66,16 +67,16 @@ export const PackagePrices =({onAddPack, currentPackage, youChoosePackage})=> {
                 </tr>
                 <tr className={"extra-kid"}>
                     <th>Dodatkowe dziecko</th>
-                    <th>{pricesExtraKids.firstPackageChild}zł</th>
-                    <th>{pricesExtraKids.secondPackageChild}zł</th>
-                    <th>{pricesExtraKids.thirdPackageChild}zł</th>
+                    <th className={"extra-kid__piggy"}>{pricesExtraKids.firstPackageChild}zł</th>
+                    <th className={"extra-kid__tiger"}>{pricesExtraKids.secondPackageChild}zł</th>
+                    <th className={"extra-kid__pooh"}>{pricesExtraKids.thirdPackageChild}zł</th>
                 </tr>
                 </tbody>
             </table>
             <div className={"youChoosePackage"}>
                 {
                     pacage.length !== 0 ? (
-                        <span >Wybrałeś <br/>{youChoosePackage}</span>
+                        <span className={"youChoosePackage__whatPackage"}>Wybrałeś <br/>{youChoosePackage}!</span>
                     ) : null
                 }
                 <img className={"birth-table-img"} src={BirthTableImg} alt="birthday-table"/>

@@ -4,39 +4,41 @@
   tbody {
     padding: 20px 0;
     text-align: center;
-    color: $white;
     border: 5px dotted $tiger_color;
     margin: 10px 0;
     .header-cells {
-      th {
-        color: $white;
-        background-color: $tiger_color;
-      }
-      &__tenkids{
+      .ten-kids{
         color: $white;
       }
-      &__piggy {
+      .piggy {
         color: $piggy_color;
       }
-      &__tiger{
-
+      .tiger {
+        color: $tiger_color;
       }
-      &__pooh {
-
+      .pooh {
+        color: $pooh_color;
       }
     }
 
     .week-days {
       color: $white;
-      background-color: $tiger_color;
     }
     .weekend-days {
       color: $white;
-      background-color: $tiger_color;
     }
     .extra-kid {
       color: $green;
       border: 5px solid $white;
+      &__piggy {
+        color: $piggy_color;
+      }
+      &__tiger {
+        color: $tiger_color;
+      }
+      &__pooh {
+        color: $pooh_color;
+      }
     }
 
     th {
@@ -54,15 +56,16 @@
 }
 
 .youChoosePackage {
-  padding-top: 40px;
-   display: flex;
+  margin-top: 40px;
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-   span {
-     display: inline-block;
-     position: relative;
-     //top: 120px
+  position: relative;
+   &__whatPackage {
+     font-size: 20px;
+     position: absolute;
+     top: 60px;
+     color: $gold;
    }
-
 }
