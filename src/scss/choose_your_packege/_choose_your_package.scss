@@ -1,4 +1,5 @@
 @import "../partials/colors";
+@import "../partials/mixins";
 
 .birth-table-img {
   width: 95%;
@@ -7,18 +8,19 @@
   }
 }
 
+
 .chooseYourPackage{
   .chooseYourPackage-box {
     text-align: center;
-    border: 10px dotted $border_choosePackage;
     margin: 10px 0;
-    background-color: $backgroundColor_choosePackage;
-    box-shadow: 0 0 22px 11px $gold
-  ;
+    @include shadowBoxes(#8147FA);
+    border-radius: 20px;
+    background-color: #8147fa;
     &__title{
       margin: 10px 0;
       padding: 10px 0 20px 0;
-      border-bottom: 10px dotted $border_choosePackage;
+      border-bottom: 10px dotted $gold;
+      color: $gold;
     }
   }
   &__form {
@@ -35,6 +37,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: sticky;
+    bottom: 0;
+    color: #2c9921;
+    box-shadow: 0 3px 8px 4px #FF6600;
   }
 }
 

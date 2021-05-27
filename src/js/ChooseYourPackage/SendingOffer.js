@@ -32,10 +32,10 @@ export const SendingOffer = ({onAdd, checkBoxesValue, checkBox}) => {
 
     return (
         <div className={"contact-details"}>
+            <h1 className={"contact-details-title"}>Dane kontaktowe:</h1>
             <div className={"contact-details__name"}>
-                <h1>Dane kontaktowe:</h1>
                 <label className={"checkbox"}>
-                    Imię
+                    Imię opiekuna
                     <input value={name} onChange={handleName} type="text"/>
                 </label>
             </div>

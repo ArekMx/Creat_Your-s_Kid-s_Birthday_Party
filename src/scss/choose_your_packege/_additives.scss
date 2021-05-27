@@ -1,6 +1,43 @@
-.additives {
-  padding: 5px;
-  h1 {
+@import "../partials/mixins";
+@import "../partials/fonts";
+@import "../partials/colors";
 
+.additives {
+  margin: 50px 0 ;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../img/wallpaper_gold.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  border-radius: 20px;
+  @include shadowBoxes($gold);
+  .additives-title {
+    text-align: center;
+    margin: 15px;
+    padding: 10px;
+    color: $backgroundColor_choosePackage;
+    background-color: rgba(255, 255, 0, 0.7);
+    border-radius: 20px;
+  }
+  .additives-btn-del {
+    background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    max-width: 500px;
+    color: $gold;
+    font-weight: bold;
+    border-radius: 10px;
+    display: block;
+    font-family: $text_font;
+    cursor: pointer;
+    &:hover {
+      background-position: right center; /* change the direction of the change here */
+      text-decoration: none;
+    }
   }
 }

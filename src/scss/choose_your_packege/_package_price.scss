@@ -2,13 +2,13 @@
 
 .form-table {
   tbody {
-    padding: 20px 0;
     text-align: center;
     border: 5px dotted $tiger_color;
     margin: 10px 0;
     .header-cells {
+      background-color: rgba(255, 255, 255, 0.2);
       .ten-kids{
-        color: $white;
+        color: $gold;
       }
       .piggy {
         color: $piggy_color;
@@ -22,14 +22,21 @@
     }
 
     .week-days {
-      color: $white;
+      background-color: $blue;
+      &__title {
+      color: #4affd5;
+      }
     }
     .weekend-days {
-      color: $white;
+      background-color: $green;
+      &__title {
+        color: #beff00;
+      }
     }
     .extra-kid {
-      color: $green;
-      border: 5px solid $white;
+      margin-top: 15px;
+      color: $dark-green;
+      background-color: rgba(255, 255, 255, 0.2);
       &__piggy {
         color: $piggy_color;
       }

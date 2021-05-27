@@ -56,6 +56,7 @@ export const ChooseYourPackage = () => {
         setPacage(valePackage);
         setAfterChoosePackage(true);
         setCurrentPackage(valePackage);
+        console.log(valePackage)
 
         if (valePackage === "299" || valePackage === "349")  {
             setExtraKid(pricesExtraKid.firstPackageChild);
@@ -95,7 +96,7 @@ export const ChooseYourPackage = () => {
     // Prices for additives paid from the child
     const [additivesForAChild, setAdditivesForAChild] = useState([]);
 
-    const [resetColorBtn, setResetColorBtn] = useState(false);
+    const [resetColorBtn, setResetColorBtn] = useState("");
 
     const addAddition =(valueAddition, price)=> {
 
@@ -133,6 +134,7 @@ export const ChooseYourPackage = () => {
             })
         }
     }
+
 
     const handleDelAdditives =()=> {
         setAdditivesForAChild([]);
@@ -388,26 +390,28 @@ export const ChooseYourPackage = () => {
 
     return (
         <div className={"chooseYourPackage"}>
-            <img className={"img-BirthDay"} src={BirthDay} alt={"BirthDay"}/>
+            {/*<img className={"img-BirthDay"} src={BirthDay} alt={"BirthDay"}/>*/}
             <div className={"chooseYourPackage__form"}>
 
                 < PackagePrices onAddPack={handlePackage} currentPackage={currentPackage} youChoosePackage={youChoosePackage}/>
                 {
                     afterChoosePackage ? (
                     <>
-                        < BirthDate onAdd={handleBirthDate}/>
+                        <div className={"desktop-display"}>
+                            < BirthDate onAdd={handleBirthDate}/>
 
-                        {/*< Additives onAdd={handleAddition()}/>*/}
-                        <div className={"additives"}>
-                            <h1>Wybierz extra dodatki:</h1>
-                            <Addition price={extraAddition.animator.price} name={extraAddition.animator.text} onAdd={addAddition} resetColorBtn={resetColorBtn}/>
-                            <Addition price={extraAddition.throne.price} name={extraAddition.throne.text}  onAdd={addAddition} resetColorBtn={resetColorBtn}/>
-                            <Addition price={extraAddition.balloons.price} name={extraAddition.balloons.text} onAdd={addAddition} resetColorBtn={resetColorBtn}/>
-                            <Addition price={extraAddition.attractions.price} name={extraAddition.attractions.text}  onAdd={addAddition} resetColorBtn={resetColorBtn}/>
-                            <button onClick={handleDelAdditives}>Usuń wszystkie dodatki</button>
+                            {/*< Additives onAdd={handleAddition()}/>*/}
+                            <div className={"additives"}>
+                                <h1 className={"additives-title"}>Wybierz extra dodatki:</h1>
+                                <Addition price={extraAddition.animator.price} name={extraAddition.animator.text} onAdd={addAddition} resetColorBtn={resetColorBtn}/>
+                                <Addition price={extraAddition.throne.price} name={extraAddition.throne.text}  onAdd={addAddition} resetColorBtn={resetColorBtn}/>
+                                <Addition price={extraAddition.balloons.price} name={extraAddition.balloons.text} onAdd={addAddition} resetColorBtn={resetColorBtn}/>
+                                <Addition price={extraAddition.attractions.price} name={extraAddition.attractions.text}  onAdd={addAddition} resetColorBtn={resetColorBtn}/>
+                                <button className={"additives-btn-del"} onClick={handleDelAdditives}>Usuń wszystkie dodatki</button>
+                            </div>
                         </div>
                         < div className={"form-total"}>
-                            <h1> Razem: {total} zł </h1>
+                            <h1> RAZEM: {total} zł </h1>
                         </div>
                         < SendingOffer checkBoxesValue={handleValidCheckBox} onAdd={handlePersonalData} checkBox={redBox}/>
                         <ul>
@@ -432,7 +436,7 @@ export const ChooseYourPackage = () => {
                             <p style={{color: "red"}}>{validName}</p>
                             <p style={{color: "red"}}>{validEmail}</p>
                             <p style={{color: "red"}}>{validPhone}</p>
-                            <p>Skontaktujemy się z Tobą w ciągu 24h</p>
+                            <p className={"contact-in24hours"}>Skontaktujemy się z Tobą w ciągu 24h</p>
                         </form>
                     </>
                     ) : null

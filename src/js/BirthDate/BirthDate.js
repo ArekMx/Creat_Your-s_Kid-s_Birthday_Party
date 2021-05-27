@@ -40,8 +40,9 @@ export const BirthDate =({onAdd})=> {
     return (
         <div className={"birth-date"}>
             <div className={"number-of-kids"}>
-                <h2>Liczba dzieci:</h2>
+                <h2>Wybierz liczbę dzieci:</h2>
                 <Slider value={numberOfKids} min={1} max={30} onChange={handleNumberOfKids} />
+                <p>Przesuń suwakiem</p>
             </div>
             <div className={"kid-name"}>
                 <h2>Imię solenizanta:</h2>
@@ -53,9 +54,10 @@ export const BirthDate =({onAdd})=> {
                 <h2>Data imprezy:</h2>
                 <DatePicker selected={birthdayDate} onChange={handleDate} />
             </div>
-            <div>
+            <div className={"birthday-party-hour"}>
+                <h2>2 godzina impreza</h2>
                 <select value={hour} onChange={handleHour} >
-                    <option value="Wybierz godzinę">Wybierz godzinę</option>
+                    <option value="Wybierz godzinę">Wybierz godzinę:</option>
                     <option value="11.00 - 14.00">11.00 - 14.00</option>
                     <option value="14.00 - 16.00">14.00 - 16.00</option>
                     <option value="17.00 - 19.00">17.00 - 19.00</option>

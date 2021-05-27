@@ -1,17 +1,25 @@
-.addition {
-  margin: 30px 0;
-  .plus-circle {
-    position: relative;
-    top: 3px;
-    right: 3px;
-  }
+@import "../partials/fonts";
 
-  text-align: center;
+.addition {
+  margin: 30px;
+  border-radius: 20px;
+  color: #6a1e50;
+  padding: 10px;
+  //.plus-circle {
+  //  position: relative;
+  //  top: 5px;
+  //  right: 3px;
+  //}
+
+  text-align: left;
   button {
-    font-family: 'Itim';
+    font-family: $text_font;
     font-size: 20px;
     outline: none;
     background: none;
     border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
   }
 }

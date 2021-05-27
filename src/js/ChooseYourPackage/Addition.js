@@ -31,8 +31,8 @@ export const Addition = ({name, onAdd, price, resetColorBtn}) => {
     return (
             <div className={"addition"}>
 
-                <button style={{color: colorBtn ? "gold" : "white"}} value={name} onClick={handleAddAddition} className={"addition__ele"}>
-                    <span><img className={"plus-circle"} src={PlusCircle} alt={"Plus-circle"}/></span>
+                <button style={{color: colorBtn ? "gold" : "#6a1e50", backgroundColor: colorBtn ? "#6a1e50" : "gold"}} value={name} onClick={handleAddAddition} className={"addition__ele"}>
+                    {/*<span><img className={"plus-circle"} src={PlusCircle} alt={"Plus-circle"}/></span>*/}
                     {name} + {price} zł
                 </button>
             </div>

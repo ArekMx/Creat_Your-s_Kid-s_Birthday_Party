@@ -2,13 +2,21 @@ import React, {useState} from "react"
 
 export const Selected =({price, onAdd, currentPackage}) => {
 
+    const [colorBtn, setColorBtn] = useState("");
+
+    const handleOnEnter =()=> {
+        setColorBtn(prevState => !prevState)
+    }
+
     return (
-        <div>
-            <button style={{border: parseFloat(currentPackage) === price ? "5px dotted #e70000" : null,
-            color: parseFloat(currentPackage) === price ? "#fff500" : null}}
-                    value={price} onClick={event => onAdd(event.target.value) }
-                    className={"selected-button"}>{price}</button>
-        </div>
+            <div>
+                <button onMouseEnter={handleOnEnter} style={{backgroundColor: parseFloat(currentPackage) === price ? "#fff500" : colorBtn,
+                    color: parseFloat(currentPackage) === price ? "#00aa00" : colorBtn }}
+                        value={price} onClick={event => onAdd(event.target.value) }
+                        className={"selected-button"}>{price}zł</button>
+            </div>
+
+
 
     )
 

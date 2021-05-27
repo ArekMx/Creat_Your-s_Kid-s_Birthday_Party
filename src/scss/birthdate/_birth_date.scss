@@ -1,48 +1,69 @@
+@import "../partials/colors";
+@import "../partials/mixins";
+
+
 .birth-date {
-  margin: 50px;
-
-  .number-of-kids {
-    color: #FF6600;
-    input {
-      background-color: #FF6600;
-    }
-  }
-
-  .kid-name {
-    color: #00ecbc;
-    input {
-      border-bottom-color: #00ecbc;
-      border-width: 0 0 3px 0;
-      outline: none;
-      width: 200px;
-      height: 35px;
-      font-size: 25px;
-      font-family: 'Itim';
-      background: none;
-      color: #FFFFFA;
-    }
-  }
-
-  .birthday-party-date {
-    color: #FF009B;
-    input {
-      border-bottom-color: #FF009B;
-      border-width: 0 0 3px 0;
-      outline: none;
-      width: 200px;
-      height: 35px;
-      font-size: 25px;
-      font-family: 'Itim';
-      background: none;
-      color: #FFFFFA;
-    }
-  }
+  margin: 50px 0;
+  background-image: url("../../img/wallpaper_blue.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  @include shadowBoxes($orange);
 
   .number-of-kids,
   .kid-name,
-  .birthday-party-date {
-    margin: 20px;
+  .birthday-party-date,
+  .birthday-party-hour {
+    margin: 30px;
+    background-color: rgba(255, 255, 0, 0.7);
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
   }
 
+  .number-of-kids {
+    color: #005f8b;
 
+  }
+
+  .kid-name {
+    color: $name;
+    input {
+      border-bottom-color: $name;
+      @include inputStyle;
+      color: $name;
+    }
+  }
+
+  .birthday-party-date {
+    color: $pooh_color;
+    input {
+      border-bottom-color: $pooh_color;
+      @include inputStyle;
+      color: $pooh_color;
+      border: none;
+    }
+  }
+
+  .birthday-party-hour {
+    color: $hours_color;
+    select {
+      color: $hours_color;
+      @include inputStyle;
+      border: none;
+      option {
+        background-color: #f3e000;
+      }
+    }
+  }
+  @include tablet-main {
+    margin: 50px;
+    justify-content: center;
+
+  }
 }
+
