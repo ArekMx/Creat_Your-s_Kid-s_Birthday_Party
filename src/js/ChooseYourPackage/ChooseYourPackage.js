@@ -39,7 +39,7 @@ export const ChooseYourPackage = () => {
         },
         attractions: {
             price: 9,
-            text: "Dodatkowe atrakcje - malowanie buzi, warkoczyki, tatuaże"
+            text: "Dodatkowe atrakcje - malowanie buzi, warkoczyki, tatuaże (płatne od dziecka)"
         },
     }
 
@@ -56,17 +56,16 @@ export const ChooseYourPackage = () => {
         setPacage(valePackage);
         setAfterChoosePackage(true);
         setCurrentPackage(valePackage);
-        console.log(valePackage)
 
         if (valePackage === "299" || valePackage === "349")  {
             setExtraKid(pricesExtraKid.firstPackageChild);
-            setYouChoosePackage("Pakiet prosiaczek");
+            setYouChoosePackage("Pakiet Prosiaczek");
         } else if (valePackage === "399" || valePackage === "449") {
             setExtraKid(pricesExtraKid.secondPackageChild);
-            setYouChoosePackage("Pakiet tygrysek");
+            setYouChoosePackage("Pakiet Tygrysek");
         } else  {
             setExtraKid(pricesExtraKid.thirdPackageChild);
-            setYouChoosePackage("Pakiet puchatek ");
+            setYouChoosePackage("Pakiet Puchatek ");
         }
     }
 
@@ -96,7 +95,7 @@ export const ChooseYourPackage = () => {
     // Prices for additives paid from the child
     const [additivesForAChild, setAdditivesForAChild] = useState([]);
 
-    const [resetColorBtn, setResetColorBtn] = useState("");
+    const [resetColorBtn, setResetColorBtn] = useState(false);
 
     const addAddition =(valueAddition, price)=> {
 
@@ -141,7 +140,6 @@ export const ChooseYourPackage = () => {
         setPricesPerAttractions([]);
         setAdditives([]);
         setResetColorBtn(prevState => !prevState);
-
     }
 
     //////// Component - SendingOffer /////////
@@ -180,48 +178,48 @@ export const ChooseYourPackage = () => {
 
         if(numberOfKids.length === 1) {
             valid = false
-            setValidNumberOfKids('Nie wybrano ilości dzieci');
+            setValidNumberOfKids('Nie wybrano ilości dzieci.');
         } else {
             setValidNumberOfKids('');
         }
         if(kidName.length===0) {
             valid = false
-            setValidKidName('Nie ustawiono imienia dziecka');
+            setValidKidName('Nie wpisano imienia dziecka.');
         } else {
             setValidKidName('');
         }
 
         if(birthdayDate === new Date()) {
             valid = false
-            setValidBirthDate('Nie ustawiono daty urodzin');
+            setValidBirthDate('Nie ustawiono daty urodzin.');
         } else {
             setValidBirthDate('')
         }
 
         if(hour === '') {
             valid = false
-            setValidHour('Nie ustawiono godziny urodzin');
+            setValidHour('Nie ustawiono godziny urodzin.');
         } else {
             setValidHour('')
         }
 
         if(name.length===0) {
             valid = false
-            setValidName('Nie wpisano imienia opiekuna');
+            setValidName('Nie wpisano imienia opiekuna.');
         } else {
             setValidName('');
         }
 
-        if(email.length===0 || email.indexOf("@") === -1) {
+        if(email.length===0 || email.indexOf("@") === -1 || email.indexOf(".") === -1) {
             valid = false
-            setValidEmail('Nie wpisano adresu meilowego lub brakuje zanku "@"');
+            setValidEmail('Nie wpisano adresu meilowego, brakuje kropki lub znaku "@".');
         } else {
             setValidEmail('');
         }
 
         if (phone.length === 0 || !Number.isInteger(Number(phone))) {
             valid = false;
-            setValidPhone('Nie wpisano numeru telefonu lub nie jest liczbą całkowitą');
+            setValidPhone('Nie wpisano numeru telefonu lub wartość nie jest liczbą całkowitą.');
         } else {
             setValidPhone('');
         }
@@ -307,7 +305,7 @@ export const ChooseYourPackage = () => {
 
     const [offers, setOffers] = useState([]);
 
-    //----- FireBase config -----//
+    //----- FireStore config -----//
     const ref = firebase.firestore().collection("offers");
 
     useEffect(() => {
@@ -335,12 +333,9 @@ export const ChooseYourPackage = () => {
     //     )
     // }, []);
 
-    const [thankYou, setThankYou] = useState('')
-
-
     const handleSubmit =(e)=> {
         e.preventDefault()
-        console.log(isValid())
+        // console.log(isValid())
 
         const newOffer = {
             package: pacage,
@@ -359,7 +354,7 @@ export const ChooseYourPackage = () => {
         }
         if (isValid()) {
 
-            //---- FireBase config ----//
+            //---- FireStore config ----//
             ref.add(newOffer)
                 .then((newOffer) =>
                     setOffers(prev=> [...prev, newOffer]));
@@ -371,20 +366,10 @@ export const ChooseYourPackage = () => {
             //     console.log(error);
             // });
         }
-        // else {
-        //     e.preventDefault()
-        // }
 
-
-        // setPacage('');
-        // setKidName('');
-        // setBirthdayDate('');
-        // setName('');
-        // setEmail('');
-        // setPhone('');
     }
 
-    console.log(offers)
+    // console.log(offers)
 
 
 
@@ -414,29 +399,31 @@ export const ChooseYourPackage = () => {
                             <h1> RAZEM: {total} zł </h1>
                         </div>
                         < SendingOffer checkBoxesValue={handleValidCheckBox} onAdd={handlePersonalData} checkBox={redBox}/>
-                        <ul>
-                            {/*{*/}
-                            {/*    offers.map (offer => (*/}
-                            {/*        <li key={new Date()}>*/}
-                            {/*            Pakiet:{offer.package}<br/>*/}
-                            {/*            Liczba dzieci:{offer.number_of_kids}<br/>*/}
-                            {/*            Cena za dodatkowe dziecko: {offer.price_for_extra_kid}<br/>*/}
-                            {/*            Dodatki: {[...offer.additives]}<br/>*/}
-                            {/*        </li>*/}
-                            {/*    ))*/}
-                            {/*}*/}
-                        </ul>
-                        <form onSubmit={handleSubmit} >
-                            <p style={{color: "white"}}>{validRodo}</p>
+                        {/*<ul>*/}
+                        {/*    {*/}
+                        {/*        offers.map (offer => (*/}
+                        {/*            <li key={new Date()}>*/}
+                        {/*                Pakiet:{offer.package}<br/>*/}
+                        {/*                Liczba dzieci:{offer.number_of_kids}<br/>*/}
+                        {/*                Cena za dodatkowe dziecko: {offer.price_for_extra_kid}<br/>*/}
+                        {/*                Dodatki: {[...offer.additives]}<br/>*/}
+                        {/*            </li>*/}
+                        {/*        ))*/}
+                        {/*    }*/}
+                        {/*</ul>*/}
+                        <form className={"sending-offer"} onSubmit={handleSubmit} >
+                            <p className={"valid-notifications"}>{validRodo}</p>
                             <button className={"sending-offer-btn"} >Wyśli zapytanie</button>
-                            <p style={{color: "red"}}>{validNumberOfKids}</p>
-                            <p style={{color: "red"}}>{validKidName}</p>
-                            <p style={{color: "red"}}>{validBirthDate}</p>
-                            <p style={{color: "red"}}>{validHour}</p>
-                            <p style={{color: "red"}}>{validName}</p>
-                            <p style={{color: "red"}}>{validEmail}</p>
-                            <p style={{color: "red"}}>{validPhone}</p>
-                            <p className={"contact-in24hours"}>Skontaktujemy się z Tobą w ciągu 24h</p>
+                            <div className={"valid-notifications"}>
+                                <p>{validNumberOfKids}</p>
+                                <p>{validKidName}</p>
+                                <p>{validBirthDate}</p>
+                                <p>{validHour}</p>
+                                <p>{validName}</p>
+                                <p>{validEmail}</p>
+                                <p>{validPhone}</p>
+                            </div>
+                            <p className={"contact-in24hours"}>Od momentu wysłania skontaktujemy się z Tobą w ciągu 24h.</p>
                         </form>
                     </>
                     ) : null

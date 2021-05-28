@@ -36,6 +36,16 @@ export const BirthDate =({onAdd})=> {
 
     onAdd(numberOfKids, kidName, birthdayDate, hour)
 
+    const customStyles = {
+        option: (styles, state) => ({
+            ...styles,
+            cursor: 'pointer',
+        }),
+        control: (styles) => ({
+            ...styles,
+            cursor: 'pointer',
+        }),
+    }
 
     return (
         <div className={"birth-date"}>
@@ -56,8 +66,8 @@ export const BirthDate =({onAdd})=> {
             </div>
             <div className={"birthday-party-hour"}>
                 <h2>2 godzina impreza</h2>
-                <select value={hour} onChange={handleHour} >
-                    <option value="Wybierz godzinę">Wybierz godzinę:</option>
+                <select style={customStyles} value={hour} onChange={handleHour} >
+                    <option value="Wybierz godzinę">Wybierz godzinę</option>
                     <option value="11.00 - 14.00">11.00 - 14.00</option>
                     <option value="14.00 - 16.00">14.00 - 16.00</option>
                     <option value="17.00 - 19.00">17.00 - 19.00</option>

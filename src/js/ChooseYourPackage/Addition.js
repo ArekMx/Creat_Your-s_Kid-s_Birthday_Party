@@ -1,10 +1,7 @@
 import React, {useState, useEffect} from "react"
 
-import PlusCircle from "../../img/plus-circle.svg"
 
 export const Addition = ({name, onAdd, price, resetColorBtn}) => {
-
-
     const [colorBtn, setColorBtn] = useState(false);
 
 
@@ -21,18 +18,17 @@ export const Addition = ({name, onAdd, price, resetColorBtn}) => {
 
     useEffect(()=> {
 
-        console.log(resetColorBtn)
-        if (resetColorBtn) {
-            setColorBtn(false);
-        }
+        setColorBtn(false);
 
-    })
+    }, [resetColorBtn])
 
     return (
             <div className={"addition"}>
 
-                <button style={{color: colorBtn ? "gold" : "#6a1e50", backgroundColor: colorBtn ? "#6a1e50" : "gold"}} value={name} onClick={handleAddAddition} className={"addition__ele"}>
-                    {/*<span><img className={"plus-circle"} src={PlusCircle} alt={"Plus-circle"}/></span>*/}
+                <button style={{color: colorBtn ? "gold" : "#6a1e50", backgroundColor: colorBtn ? "#6a1e50" : "gold"}}
+                        value={name}
+                        onClick={handleAddAddition}
+                        className={"addition__ele"}>
                     {name} + {price} zł
                 </button>
             </div>

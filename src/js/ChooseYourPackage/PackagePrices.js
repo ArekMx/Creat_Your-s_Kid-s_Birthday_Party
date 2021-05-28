@@ -51,9 +51,9 @@ export const PackagePrices =({onAddPack, currentPackage, youChoosePackage})=> {
                         <tbody>
                         <tr className={"header-cells"}>
                             <th className={"ten-kids"}>Pakiet dla 10 dzieci</th>
-                            <th className={"piggy"}>Pakiet prosiaczek</th>
-                            <th className={"tiger"}>Pakiet tygrsek</th>
-                            <th className={"pooh"}>Pakiet puchatek</th>
+                            <th className={"piggy"}>Pakiet Prosiaczek</th>
+                            <th className={"tiger"}>Pakiet Tygrsek</th>
+                            <th className={"pooh"}>Pakiet Puchatek</th>
                         </tr>
                         <tr className={"week-days"}>
                             <th className={"week-days__title"}>Poniedziałek - czwartek</th>

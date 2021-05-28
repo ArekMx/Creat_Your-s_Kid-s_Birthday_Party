@@ -3,8 +3,8 @@
 
 
 .birth-date {
-  margin: 50px 0;
-  background-image: url("../../img/wallpaper_blue.svg");
+  margin-top: 50px;
+  background-image: url("../../img/wallpaper_green.svg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   justify-content: left;
-  @include shadowBoxes($orange);
+  @include shadowBoxes($green);
 
   .number-of-kids,
   .kid-name,
@@ -40,30 +40,45 @@
   }
 
   .birthday-party-date {
-    color: $pooh_color;
+    color: $dark-green;
     input {
-      border-bottom-color: $pooh_color;
+      cursor:pointer;
+      text-align: center;
+      border-bottom-color: $dark-green;
       @include inputStyle;
-      color: $pooh_color;
+      color: $dark-green;
       border: none;
+      font-weight: bold;
     }
   }
 
   .birthday-party-hour {
     color: $hours_color;
     select {
+      cursor:pointer;
+      text-align: center;
       color: $hours_color;
       @include inputStyle;
       border: none;
+      font-weight: bold;
+      appearance: none;
+      background-image: url("../../img/arrow-down-circle.svg");
+      background-repeat: no-repeat;
+      background-position: right;
+
       option {
-        background-color: #f3e000;
+        display: inline-block;
+        background-color: $pooh_color;
+        font-weight: bold;
+        border-radius: 20px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
   @include tablet-main {
     margin: 50px;
     justify-content: center;
-
   }
 }
-

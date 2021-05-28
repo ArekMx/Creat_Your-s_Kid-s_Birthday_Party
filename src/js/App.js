@@ -21,8 +21,8 @@ function App() {
   }
 
   return (
-    <div className={"container"}>
-        <section className={"start"}>
+    <div className={"body"}>
+        <section className={"start container"}>
             <Welcome hidePhoto={handleHidePhoto} onShow={handleShow}/>
             {
                 hideButtonAndImg ? null : (
@@ -33,10 +33,10 @@ function App() {
         {
             showPackages ? (
                 <>
-                    <section className={"main"}>
+                    <section className={"main container"}>
                         <Packages />
                     </section>
-                    <section className={"end"}>
+                    <section className={"end container"}>
                         <ChooseYourPackage />
                     </section>
                 </>

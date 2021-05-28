@@ -1,6 +1,9 @@
 @import "../partials/colors";
+@import "../partials/mixins";
 
 .form-table {
+  display: inline-block;
+  padding: 5px;
   tbody {
     text-align: center;
     border: 5px dotted $tiger_color;
@@ -59,11 +62,12 @@
         font-size: 25px;
       }
     }
+
   }
 }
 
 .youChoosePackage {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,5 +78,9 @@
      position: absolute;
      top: 60px;
      color: $gold;
+     @include tablet-main {
+       font-size: 27px;
+       top: 40px;
+     }
    }
 }

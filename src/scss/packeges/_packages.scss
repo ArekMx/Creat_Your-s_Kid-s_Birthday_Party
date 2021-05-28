@@ -10,12 +10,10 @@
   z-index: 1;
 
   @include mobile-main  {
-    left: 15%;
+    left: 20%;
   }
   @include tablet-main {
-    left: 25%;
-  }
-  @include desktop-main {
+    left: 35%;
   }
 }
 
@@ -49,11 +47,11 @@
   height: 100%;
   display: flex;
   justify-content: left;
-  //align-items: center;
   .package-table {
+    display: inline-block;
+    max-height: 680px;
     background-color: $blue_background;
     margin-top: 400px;
-
     border: 3px solid #552929;
     border-radius: 20px;
     position: absolute;
@@ -62,6 +60,8 @@
     @include shadowBoxes($gray);
 
     tbody {
+      display: inline-block;
+      max-height: 680px;
       .ten-kids {
         color: $gold;
         border-bottom: 2px solid $white;
@@ -95,9 +95,8 @@
       .column-pooh {
         padding: 7px;
       }
-
-
     }
+
     .stars {
       display: flex;
       flex-direction: column;
@@ -113,14 +112,10 @@
         padding: 50px;
       }
     }
-
   }
-  //@include mobile-main {
-  //  left: 40%;
-  //}
   @include tablet-main {
     justify-content: center;
-
+    font-size: 20px;
   }
 }
 
@@ -129,5 +124,6 @@
   flex-direction: column;
   @include tablet-main {
     flex-direction: row;
+    justify-content: space-between;
   }
 }
