@@ -79,7 +79,7 @@ export const PackagePrices =({onAddPack, currentPackage, youChoosePackage})=> {
                 <div className={"youChoosePackage"}>
                     {
                         pacage.length !== 0 ? (
-                            <span className={"youChoosePackage__whatPackage"}>Wybrałeś <br/>{youChoosePackage}!</span>
+                            <span className={"youChoosePackage__whatPackage"}>Wybrałeś Pakiet<br/>{youChoosePackage}!</span>
                         ) : null
                     }
                     <img className={"birth-table-img"} src={BirthTableImg} alt="birthday-table"/>

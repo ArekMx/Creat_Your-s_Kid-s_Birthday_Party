@@ -59,13 +59,13 @@ export const ChooseYourPackage = () => {
 
         if (valePackage === "299" || valePackage === "349")  {
             setExtraKid(pricesExtraKid.firstPackageChild);
-            setYouChoosePackage("Pakiet Prosiaczek");
+            setYouChoosePackage("Prosiaczek");
         } else if (valePackage === "399" || valePackage === "449") {
             setExtraKid(pricesExtraKid.secondPackageChild);
-            setYouChoosePackage("Pakiet Tygrysek");
+            setYouChoosePackage("Tygrysek");
         } else  {
             setExtraKid(pricesExtraKid.thirdPackageChild);
-            setYouChoosePackage("Pakiet Puchatek ");
+            setYouChoosePackage("Puchatek ");
         }
     }
 

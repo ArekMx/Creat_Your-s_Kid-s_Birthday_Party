@@ -74,10 +74,13 @@
   text-align: center;
   position: relative;
    &__whatPackage {
-     font-size: 20px;
+     font-size: 27px;
      position: absolute;
      top: 60px;
-     color: $gold;
+     color: #98ff90;
+     background-color: rgba(255, 0, 0, 0.5);
+     border-radius: 10px;
+     padding: 0 5px;
      @include tablet-main {
        font-size: 27px;
        top: 40px;
