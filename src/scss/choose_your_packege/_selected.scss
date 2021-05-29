@@ -1,5 +1,6 @@
 @import "../partials/fonts";
 @import "../partials/colors";
+@import "../partials/mixins";
 
 .selected {
   cursor: pointer;
@@ -11,12 +12,15 @@
   border: none;
   font-weight: bold;
   font-family: $text_font;
-  font-size: 25px;
+  font-size: 20px;
   padding: 10px;
   border-radius: 20px;
   color: $gold;
   &:hover {
     background-color: $gold;
     color: $green;
+  }
+  @include tablet-main {
+    font-size: 25px;
   }
 }
