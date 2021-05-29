@@ -9,12 +9,12 @@ export const Packages = () => {
     const options = [
         "2-godzinna wspaniała zabawa",
         "Miejsce urodzinowe wraz z przygotowaniem i posprzątaniem po imprezie",
-        "Zaprosznie w formie papierowej lub on-line",
+        "Zaproszenie w formie papierowej lub on-line",
         "Zastawa z kolorowym akcentem",
         "Zastawa dla rodziców",
         "Woda bez limitu",
         "Udostępnienie akcesoriów urodzinowych (miski, patera na tort etc.)",
-        "Przekąski: ciastka, żelki, paluszki, chiipsy",
+        "Przekąski: ciastka, żelki, paluszki, chipsy",
         "Soki 100%",
         "Dekoracja balonami",
         "Gadżety dla solenizanta",
@@ -30,7 +30,7 @@ export const Packages = () => {
                     <tr >
                         <th className={"ten-kids"}>Pakiet urodzinowy dla 10 dzieci</th>
                         <th className={"package-piggy"}>Prosiaczek</th>
-                        <th className={"package-tiger"}>Tygrsek</th>
+                        <th className={"package-tiger"}>Tygrysek</th>
                         <th className={"package-pooh"}>Puchatek</th>
                     </tr>
                     < PackageElement text={options[0]} PackOne={true} PackTwo={true} PackThree={true}/>

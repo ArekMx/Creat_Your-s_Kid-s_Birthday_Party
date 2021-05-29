@@ -413,7 +413,7 @@ export const ChooseYourPackage = () => {
                         {/*</ul>*/}
                         <form className={"sending-offer"} onSubmit={handleSubmit} >
                             <p className={"valid-notifications"}>{validRodo}</p>
-                            <button className={"sending-offer-btn"} >Wyśli zapytanie</button>
+                            <button className={"sending-offer-btn"} >Wyślij zapytanie</button>
                             <div className={"valid-notifications"}>
                                 <p>{validNumberOfKids}</p>
                                 <p>{validKidName}</p>

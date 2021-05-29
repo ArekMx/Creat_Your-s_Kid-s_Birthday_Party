@@ -55,12 +55,12 @@ export const SendingOffer = ({onAdd, checkBoxesValue, checkBox}) => {
                 <label className={"advertisement"}>
                     <input type="checkbox" onChange={() => setCheckedAgreement(!checkedAgreement)} defaultChecked={checkedAgreement}/>
                     <span></span>
-                    Chcę otrzymywać informację o ekstra promocjach. Wyrażam zgodę na przetwarzanie moich danych osobowyh do celów marketingowych. Nie spamujemy!
+                    Chcę otrzymywać informacje o najnowszych promocjach. Wyrażam zgodę na przetwarzanie moich danych osobowyh do celów marketingowych. Nie spamujemy!
                 </label>
                 <label className={"rodo"}>
                     <input type="checkbox" onChange={() => setCheckedRodo(!checkedRodo)} defaultChecked={checkedRodo}/>
                     <span style={{border: checkBox && !checkedRodo ? "3px solid red" : "3px solid cornflowerblue"}}></span>
-                    Wyrażam zgodę na przetwarzanie moich danych osobowych w celu przygotowania i przedstawienia mi oferty na organizację Imprezy Urodzinowej. Zapoznałem się i akcetpuję Politykę Prywatnośći firmy.
+                    Wyrażam zgodę na przetwarzanie moich danych osobowych w celu przygotowania i przedstawienia mi oferty na organizację Imprezy Urodzinowej. Zapoznałem się i akceptuję Politykę Prywatności firmy.
                 </label>
             </div>
 
