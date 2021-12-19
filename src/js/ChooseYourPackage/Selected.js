@@ -10,10 +10,14 @@ export const Selected =({price, onAdd, currentPackage}) => {
 
     return (
             <div>
-                <button onMouseEnter={handleOnEnter} style={{backgroundColor: parseFloat(currentPackage) === price ? "#fff500" : colorBtn,
-                    color: parseFloat(currentPackage) === price ? "#00aa00" : colorBtn }}
-                        value={price} onClick={event => onAdd(event.target.value) }
-                        className={"selected-button"}>{price}zł</button>
+                <button 
+                onMouseEnter={handleOnEnter}
+                value={price}
+                onClick={event => onAdd(event.target.value) } 
+                style={{backgroundColor: parseFloat(currentPackage) === price ? "#fff500" : colorBtn,
+                        color: parseFloat(currentPackage) === price ? "#00aa00" : colorBtn }} 
+                className={"selected-button"}>{price}zł
+                </button>
             </div>
 
 

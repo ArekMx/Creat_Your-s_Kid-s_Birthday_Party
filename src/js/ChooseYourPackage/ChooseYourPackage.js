@@ -14,8 +14,6 @@ import BirthDay from "../../img/urodziny.gif";
 
 export const ChooseYourPackage = () => {
 
-
-
     //Prices extra kids
     const pricesExtraKid = {
         firstPackageChild: 29,
