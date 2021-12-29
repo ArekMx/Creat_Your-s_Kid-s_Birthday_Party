@@ -68,7 +68,7 @@ export const BirthDate =({onAdd})=> {
                 <h2>2 godzina impreza</h2>
                 <select style={customStyles} value={hour} onChange={handleHour} >
                     <option value="Wybierz godzinę">Wybierz godzinę</option>
-                    <option value="11.00 - 14.00">11.00 - 14.00</option>
+                    <option value="11.00 - 13.00">11.00 - 14.00</option>
                     <option value="14.00 - 16.00">14.00 - 16.00</option>
                     <option value="17.00 - 19.00">17.00 - 19.00</option>
                 </select>

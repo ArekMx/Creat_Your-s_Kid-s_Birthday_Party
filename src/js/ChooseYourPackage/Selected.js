@@ -2,7 +2,7 @@ import React, {useState} from "react"
 
 export const Selected =({price, onAdd, currentPackage}) => {
 
-    const [colorBtn, setColorBtn] = useState("");
+    const [colorBtn, setColorBtn] = useState("green");
 
     const handleOnEnter =()=> {
         setColorBtn(prevState => !prevState)
